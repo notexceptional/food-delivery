@@ -1,5 +1,6 @@
 package com.fooddelivery.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MenuItem {
@@ -15,6 +16,8 @@ public class MenuItem {
         this.price = price;
         this.isAvailable = true;
         this.quantity = 0;
+        this.addOns = new ArrayList<>();
+        this.options = new ArrayList<>();
     }
 
     public String getName() { return name; }
@@ -35,5 +38,4 @@ public class MenuItem {
     public List<String> getOptions() { return options; }
     public void setOptions(List<String> options) { this.options = options; }
 
-    system.out.println"Food delivery new App";
 }
