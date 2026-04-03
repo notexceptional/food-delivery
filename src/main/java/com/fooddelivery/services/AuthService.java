@@ -1,22 +1,17 @@
 package com.fooddelivery.services;
 
+import java.util.UUID;
+
 import com.fooddelivery.models.Customer;
 import com.fooddelivery.models.Restaurant;
 import com.fooddelivery.storage.DataStore;
-
-import java.util.UUID;
-
-
-
 
 public class AuthService {
 
     private final DataStore store = DataStore.getInstance();
 
-    
-
     public Customer registerCustomer(String username, String password,
-                                     String email, String phone, String address) {
+            String email, String phone, String address) {
         if (store.findCustomerByUsername(username) != null) {
             throw new IllegalArgumentException("Username '" + username + "' is already taken.");
         }
@@ -26,7 +21,6 @@ public class AuthService {
         return c;
     }
 
-    
     public Customer loginCustomer(String username, String password) {
         Customer c = store.findCustomerByUsername(username);
         if (c != null && c.getPassword().equals(password)) {
@@ -35,12 +29,10 @@ public class AuthService {
         return null;
     }
 
-    
-
     public Restaurant registerRestaurant(String name, String location, String area,
-                                         String contactInfo, String email,
-                                         String openingHours, String cuisine,
-                                         String ownerUsername, String ownerPassword) {
+            String contactInfo, String email,
+            String openingHours, String cuisine,
+            String ownerUsername, String ownerPassword) {
         if (store.findRestaurantByOwner(ownerUsername) != null) {
             throw new IllegalArgumentException("Owner '" + ownerUsername + "' already registered.");
         }
@@ -50,7 +42,6 @@ public class AuthService {
         return r;
     }
 
-    
     public Restaurant loginRestaurant(String ownerUsername, String ownerPassword) {
         Restaurant r = store.findRestaurantByOwner(ownerUsername);
         if (r != null && r.getOwnerPassword().equals(ownerPassword)) {

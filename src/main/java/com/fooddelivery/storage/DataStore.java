@@ -1,25 +1,26 @@
 package com.fooddelivery.storage;
 
-import com.fooddelivery.models.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
+import com.fooddelivery.models.Coupon;
+import com.fooddelivery.models.Customer;
+import com.fooddelivery.models.DeliveryRider;
+import com.fooddelivery.models.Order;
+import com.fooddelivery.models.Restaurant;
 
 public class DataStore {
 
     private static DataStore instance;
 
-    private List<Customer>      customers    = new ArrayList<>();
-    private List<Restaurant>    restaurants  = new ArrayList<>();
-    private List<Order>         orders       = new ArrayList<>();
-    private List<Coupon>        coupons      = new ArrayList<>();
-    private List<DeliveryRider> riders       = new ArrayList<>();
+    private List<Customer> customers = new ArrayList<>();
+    private List<Restaurant> restaurants = new ArrayList<>();
+    private List<Order> orders = new ArrayList<>();
+    private List<Coupon> coupons = new ArrayList<>();
+    private List<DeliveryRider> riders = new ArrayList<>();
 
-    private DataStore() {}
+    private DataStore() {
+    }
 
     public static DataStore getInstance() {
         if (instance == null) {
@@ -28,9 +29,13 @@ public class DataStore {
         return instance;
     }
 
-    
-    public List<Customer>   getCustomers()                         { return customers; }
-    public void             setCustomers(List<Customer> customers) { this.customers = customers; }
+    public List<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
+    }
 
     public void addCustomer(Customer c) {
         customers.add(c);
@@ -43,9 +48,13 @@ public class DataStore {
                 .findFirst().orElse(null);
     }
 
-    
-    public List<Restaurant> getRestaurants()                           { return restaurants; }
-    public void             setRestaurants(List<Restaurant> list)      { this.restaurants = list; }
+    public List<Restaurant> getRestaurants() {
+        return restaurants;
+    }
+
+    public void setRestaurants(List<Restaurant> list) {
+        this.restaurants = list;
+    }
 
     public void addRestaurant(Restaurant r) {
         restaurants.add(r);
@@ -64,9 +73,13 @@ public class DataStore {
                 .findFirst().orElse(null);
     }
 
-    
-    public List<Order>  getOrders()                { return orders; }
-    public void         setOrders(List<Order> o)   { this.orders = o; }
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> o) {
+        this.orders = o;
+    }
 
     public void addOrder(Order o) {
         orders.add(o);
@@ -83,9 +96,13 @@ public class DataStore {
         JsonStorage.saveAll(this);
     }
 
-    
-    public List<Coupon> getCoupons()               { return coupons; }
-    public void         setCoupons(List<Coupon> c) { this.coupons = c; }
+    public List<Coupon> getCoupons() {
+        return coupons;
+    }
+
+    public void setCoupons(List<Coupon> c) {
+        this.coupons = c;
+    }
 
     public void addCoupon(Coupon c) {
         coupons.add(c);
@@ -98,9 +115,13 @@ public class DataStore {
                 .findFirst().orElse(null);
     }
 
-    
-    public List<DeliveryRider> getRiders()                   { return riders; }
-    public void                setRiders(List<DeliveryRider> r) { this.riders = r; }
+    public List<DeliveryRider> getRiders() {
+        return riders;
+    }
+
+    public void setRiders(List<DeliveryRider> r) {
+        this.riders = r;
+    }
 
     public void addRider(DeliveryRider r) {
         riders.add(r);

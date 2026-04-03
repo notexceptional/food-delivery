@@ -1,13 +1,10 @@
 package com.fooddelivery.services;
 
-import com.fooddelivery.models.Restaurant;
-import com.fooddelivery.storage.DataStore;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
-
-
+import com.fooddelivery.models.Restaurant;
+import com.fooddelivery.storage.DataStore;
 
 public class RestaurantService {
 
@@ -17,38 +14,33 @@ public class RestaurantService {
         return store.getRestaurants();
     }
 
-    
     public List<Restaurant> getByArea(String area) {
         return store.getRestaurants().stream()
                 .filter(r -> r.getArea().equalsIgnoreCase(area))
                 .collect(Collectors.toList());
     }
 
-    
     public List<Restaurant> getOpenByArea(String area) {
         return getByArea(area).stream()
                 .filter(Restaurant::isOpen)
                 .collect(Collectors.toList());
     }
 
-    
     public List<Restaurant> search(String query) {
         String q = query.toLowerCase();
         return store.getRestaurants().stream()
                 .filter(r -> r.getName().toLowerCase().contains(q)
-                        || r.getCuisine().toLowerCase().contains(q)
-                        || r.getArea().toLowerCase().contains(q))
+                || r.getCuisine().toLowerCase().contains(q)
+                || r.getArea().toLowerCase().contains(q))
                 .collect(Collectors.toList());
     }
 
-    
     public List<Restaurant> sortByRating() {
         return store.getRestaurants().stream()
                 .sorted((a, b) -> Double.compare(b.getRating(), a.getRating()))
                 .collect(Collectors.toList());
     }
 
-    
     public List<Restaurant> sortByName() {
         return store.getRestaurants().stream()
                 .sorted((a, b) -> a.getName().compareToIgnoreCase(b.getName()))
@@ -65,7 +57,6 @@ public class RestaurantService {
         store.saveChanges();
     }
 
-    
     public List<String> getAllAreas() {
         return store.getRestaurants().stream()
                 .map(Restaurant::getArea)

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="92ee43dc-8e6c-4624-8070-fb2894efc5d1" name="Changes" comment="final 0">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cp.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/restaurants.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/restaurants.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/api/FoodDeliveryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/api/FoodDeliveryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/Coupon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/Coupon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/DeliveryRider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/DeliveryRider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/MenuItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/OrderStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/Restaurant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/CartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/CouponService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/CouponService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/DeliveryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/DeliveryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/MenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/RestaurantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/RestaurantService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/SearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/SearchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/storage/DataStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/storage/DataStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/storage/JsonStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/storage/JsonStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;notexceptional&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/notexceptional/food-delivery.git&quot;,
+    &quot;accountId&quot;: &quot;a61f30ec-104d-4481-8a66-075d709b0cd1&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="3BekTWJeIwuC1x5IbNxAK2MK56f" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;appmod/java-upgrade-20260401164059&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/jarvi/IdeaProjects/food-delivery/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="food-delivery" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="food-delivery" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.138" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="92ee43dc-8e6c-4624-8070-fb2894efc5d1" name="Changes" comment="" />
+      <created>1774856934337</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1774856934337</updated>
+    </task>
+    <task id="LOCAL-00001" summary="dc">
+      <option name="closed" value="true" />
+      <created>1774877174513</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1774877174513</updated>
+    </task>
+    <task id="LOCAL-00002" summary="uy">
+      <option name="closed" value="true" />
+      <created>1774878799379</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1774878799379</updated>
+    </task>
+    <task id="LOCAL-00003" summary="final">
+      <option name="closed" value="true" />
+      <created>1774899538905</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1774899538905</updated>
+    </task>
+    <task id="LOCAL-00004" summary="final">
+      <option name="closed" value="true" />
+      <created>1775221948997</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1775221948997</updated>
+    </task>
+    <task id="LOCAL-00005" summary="final 0">
+      <option name="closed" value="true" />
+      <created>1775221969747</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1775221969747</updated>
+    </task>
+    <task id="LOCAL-00006" summary="final 0">
+      <option name="closed" value="true" />
+      <created>1775221980053</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1775221980053</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="dc" />
+    <MESSAGE value="uy" />
+    <MESSAGE value="final" />
+    <MESSAGE value="final 0" />
+    <option name="LAST_COMMIT_MESSAGE" value="final 0" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

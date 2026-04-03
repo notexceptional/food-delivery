@@ -8,6 +8,7 @@ import com.fooddelivery.storage.JsonStorage;
 import com.fooddelivery.ui.MainFrame;
 
 import jakarta.xml.ws.Endpoint;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -15,9 +16,9 @@ public class Main {
         DataStore store = DataStore.getInstance();
         JsonStorage.loadAll(store);
         System.out.println("[Main] Loaded "
-                + store.getCustomers().size()    + " customer(s), "
-                + store.getRestaurants().size()  + " restaurant(s), "
-                + store.getOrders().size()       + " order(s).");
+                + store.getCustomers().size() + " customer(s), "
+                + store.getRestaurants().size() + " restaurant(s), "
+                + store.getOrders().size() + " order(s).");
         String soapAddress = "http://localhost:8888/FoodDeliveryService";
         try {
             Endpoint.publish(soapAddress, new FoodDeliveryService());
