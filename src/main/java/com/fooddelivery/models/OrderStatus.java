@@ -10,11 +10,16 @@ public enum OrderStatus {
     @Override
     public String toString() {
         return switch (this) {
-            case PENDING          -> "Pending";
-            case PREPARING        -> "Preparing";
-            case OUT_FOR_DELIVERY -> "Out for Delivery";
-            case DELIVERED        -> "Delivered";
-            case CANCELLED        -> "Cancelled";
+            case PENDING ->
+                "Pending";
+            case PREPARING ->
+                "Preparing";
+            case OUT_FOR_DELIVERY ->
+                "Out for Delivery";
+            case DELIVERED ->
+                "Delivered";
+            case CANCELLED ->
+                "Cancelled";
         };
     }
 }

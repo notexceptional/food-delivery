@@ -1,42 +1,26 @@
 package com.fooddelivery.api;
 
+import java.util.List;
+
 import com.fooddelivery.models.MenuItem;
 import com.fooddelivery.models.Order;
 import com.fooddelivery.models.Restaurant;
 import com.fooddelivery.services.OrderService;
 import com.fooddelivery.services.SearchService;
 import com.fooddelivery.storage.DataStore;
+
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
 import jakarta.jws.WebService;
 
-import java.util.List;
-
-
-
-
-
-
-
-
-
-
-
-
 @WebService(name = "FoodDeliveryService",
-            serviceName = "FoodDeliveryService",
-            targetNamespace = "http://api.fooddelivery.com/")
+        serviceName = "FoodDeliveryService",
+        targetNamespace = "http://api.fooddelivery.com/")
 public class FoodDeliveryService {
 
     private final SearchService searchService = new SearchService();
-    private final OrderService  orderService  = new OrderService();
-    private final DataStore     store         = DataStore.getInstance();
-
-    
-
-
-
-
+    private final OrderService orderService = new OrderService();
+    private final DataStore store = DataStore.getInstance();
 
     @WebMethod(operationName = "getRestaurantsByArea")
     public String getRestaurantsByArea(
@@ -57,12 +41,6 @@ public class FoodDeliveryService {
         return sb.toString();
     }
 
-    
-
-
-
-
-
     @WebMethod(operationName = "searchRestaurants")
     public String searchRestaurants(
             @WebParam(name = "query") String query) {
@@ -82,12 +60,6 @@ public class FoodDeliveryService {
         return sb.toString();
     }
 
-    
-
-
-
-
-
     @WebMethod(operationName = "getMenuByRestaurantId")
     public String getMenuByRestaurantId(
             @WebParam(name = "restaurantId") String restaurantId) {
@@ -102,7 +74,7 @@ public class FoodDeliveryService {
         }
         StringBuilder sb = new StringBuilder();
         sb.append("Menu for ").append(r.getName())
-          .append(" (").append(r.getCuisine()).append(")\n");
+                .append(" (").append(r.getCuisine()).append(")\n");
         sb.append("─".repeat(50)).append("\n");
         String currentCategory = "";
         for (MenuItem item : menu) {
@@ -120,12 +92,6 @@ public class FoodDeliveryService {
         return sb.toString();
     }
 
-    
-
-
-
-
-
     @WebMethod(operationName = "getOrderStatus")
     public String getOrderStatus(
             @WebParam(name = "orderId") String orderId) {
@@ -135,11 +101,11 @@ public class FoodDeliveryService {
             return "Order not found: " + orderId;
         }
         return String.format(
-                "Order ID  : %s%n" +
-                "Restaurant: %s%n" +
-                "Status    : %s%n" +
-                "Total     : ৳%.2f%n" +
-                "Placed    : %s",
+                "Order ID  : %s%n"
+                + "Restaurant: %s%n"
+                + "Status    : %s%n"
+                + "Total     : ৳%.2f%n"
+                + "Placed    : %s",
                 order.getOrderId(), order.getRestaurantName(),
                 order.getStatus(), order.getTotalPrice(), order.getTimestamp());
     }

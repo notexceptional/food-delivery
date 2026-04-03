@@ -1,26 +1,22 @@
 package com.fooddelivery.services;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.fooddelivery.models.Customer;
 import com.fooddelivery.models.MenuItem;
 import com.fooddelivery.models.OrderItem;
 import com.fooddelivery.storage.DataStore;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
-
-
 public class CartService {
 
     private final DataStore store = DataStore.getInstance();
 
-    
     public void addToCart(Customer customer, MenuItem item, int quantity, List<String> chosenOptions) {
         if (!item.isAvailable()) {
             throw new IllegalStateException(item.getName() + " is not available.");
         }
-        
+
         for (OrderItem existing : customer.getCart()) {
             if (existing.getMenuItemName().equals(item.getName())) {
                 existing.setQuantity(existing.getQuantity() + quantity);
@@ -34,28 +30,26 @@ public class CartService {
         store.saveChanges();
     }
 
-    
     public boolean removeFromCart(Customer customer, String itemName) {
         boolean removed = customer.getCart()
                 .removeIf(i -> i.getMenuItemName().equalsIgnoreCase(itemName));
-        if (removed) store.saveChanges();
+        if (removed) {
+            store.saveChanges();
+        }
         return removed;
     }
 
-    
     public void clearCart(Customer customer) {
         customer.getCart().clear();
         store.saveChanges();
     }
 
-    
     public double getCartTotal(Customer customer) {
         return customer.getCart().stream()
                 .mapToDouble(OrderItem::getSubtotal)
                 .sum();
     }
 
-    
     public List<OrderItem> getCartItems(Customer customer) {
         return customer.getCart();
     }
