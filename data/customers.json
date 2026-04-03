@@ -1,0 +1,31 @@
+[
+  {
+    "address": "uyh build , dhaka",
+    "cart": [],
+    "orderHistory": [],
+    "userId": "USR-15A360",
+    "userName": "tiran",
+    "password": "123456",
+    "email": "tiradu@gmail",
+    "phone": "01474754845"
+  },
+  {
+    "address": "asgiudehfiudsbiufdsiu",
+    "cart": [
+      {
+        "menuItemName": "Chicken Biryani",
+        "unitPrice": 260.0,
+        "quantity": 1,
+        "chosenOptions": [
+          "chicken biriyani"
+        ]
+      }
+    ],
+    "orderHistory": [],
+    "userId": "USR-896B7E",
+    "userName": "tiran1",
+    "password": "123456",
+    "email": "tiraders",
+    "phone": "506066565156"
+  }
+]
