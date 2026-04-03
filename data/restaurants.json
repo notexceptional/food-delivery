@@ -1,0 +1,2042 @@
+[
+  {
+    "name": "Nahid Store",
+    "restaurantId": "REST-5920F4B6",
+    "location": "VW6Q+2GH",
+    "contactInfo": "01835-034019",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Restaurant",
+    "rating": 5.0,
+    "open": true,
+    "ownerUsername": "owner_5920f4b6",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF1059",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-5920F4B6"
+      },
+      {
+        "code": "LUNCH1559",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-5920F4B6"
+      }
+    ]
+  },
+  {
+    "name": "Modhumoti hotel and restaurant ️ ,Gawhardanga chowrongir mor, Tungipara",
+    "restaurantId": "REST-49FABE08",
+    "location": "VVMV+W7 Patgati",
+    "contactInfo": "01854-368920",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Restaurant",
+    "rating": 4.0,
+    "open": true,
+    "ownerUsername": "owner_49fabe08",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF1049",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-49FABE08"
+      },
+      {
+        "code": "LUNCH1549",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-49FABE08"
+      }
+    ]
+  },
+  {
+    "name": "Spicy and Biriyani House",
+    "restaurantId": "REST-BFD42A5B",
+    "location": "VVPV+399, Patgati",
+    "contactInfo": "01732-999000",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Restaurant",
+    "rating": 4.0,
+    "open": false,
+    "ownerUsername": "owner_bfd42a5b",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF10BF",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-BFD42A5B"
+      },
+      {
+        "code": "LUNCH15BF",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-BFD42A5B"
+      }
+    ]
+  },
+  {
+    "name": "Saddam Hotel and Restaurant",
+    "restaurantId": "REST-AB263CBA",
+    "location": "VVPW+QWJ, Unnamed Road",
+    "contactInfo": "N/A",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Restaurant",
+    "rating": 3.8,
+    "open": true,
+    "ownerUsername": "owner_ab263cba",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF10AB",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-AB263CBA"
+      },
+      {
+        "code": "LUNCH15AB",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-AB263CBA"
+      }
+    ]
+  },
+  {
+    "name": "SAHA TEA STORE",
+    "restaurantId": "REST-D788C168",
+    "location": "VVPW+W9 Patgati",
+    "contactInfo": "01984-194983",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Restaurant",
+    "rating": 4.0,
+    "open": false,
+    "ownerUsername": "owner_d788c168",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF10D7",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-D788C168"
+      },
+      {
+        "code": "LUNCH15D7",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-D788C168"
+      }
+    ]
+  },
+  {
+    "name": "Masud Hotel And Restaurant",
+    "restaurantId": "REST-7F2B3E00",
+    "location": "VVQV+958, Gopalgon j- Tungipara - Nazirpur - Pirojpur Rd",
+    "contactInfo": "01936-535192",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Restaurant",
+    "rating": 3.5,
+    "open": false,
+    "ownerUsername": "owner_7f2b3e00",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF107F",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-7F2B3E00"
+      },
+      {
+        "code": "LUNCH157F",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-7F2B3E00"
+      }
+    ]
+  },
+  {
+    "name": "বন্ধু ফাস্টফুড",
+    "restaurantId": "REST-F2DAA361",
+    "location": "VVRR+PJQ",
+    "contactInfo": "N/A",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Fast food restaurant",
+    "rating": 0.0,
+    "open": false,
+    "ownerUsername": "owner_f2daa361",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF10F2",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-F2DAA361"
+      },
+      {
+        "code": "LUNCH15F2",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-F2DAA361"
+      }
+    ]
+  },
+  {
+    "name": "Saayen Restaurant ছায়েন রেস্টুরেন্ট",
+    "restaurantId": "REST-ED0316FD",
+    "location": "VVVR+3HJ Bus stand, Patgati Tungipara Road",
+    "contactInfo": "N/A",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Restaurant",
+    "rating": 4.0,
+    "open": false,
+    "ownerUsername": "owner_ed0316fd",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF10ED",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-ED0316FD"
+      },
+      {
+        "code": "LUNCH15ED",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-ED0316FD"
+      }
+    ]
+  },
+  {
+    "name": "Jonnoni Restaurent",
+    "restaurantId": "REST-C9C53486",
+    "location": "VVVR+5HJ, Gopalgon j- Tungipara - Nazirpur - Pirojpur Rd",
+    "contactInfo": "N/A",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Restaurant",
+    "rating": 3.9,
+    "open": true,
+    "ownerUsername": "owner_c9c53486",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF10C9",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-C9C53486"
+      },
+      {
+        "code": "LUNCH15C9",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-C9C53486"
+      }
+    ]
+  },
+  {
+    "name": "Shine Restaurant",
+    "restaurantId": "REST-6105B7A9",
+    "location": "VVVR+6G5 Bus Stand",
+    "contactInfo": "01715-252256",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Restaurant",
+    "rating": 5.0,
+    "open": false,
+    "ownerUsername": "owner_6105b7a9",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF1061",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-6105B7A9"
+      },
+      {
+        "code": "LUNCH1561",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-6105B7A9"
+      }
+    ]
+  },
+  {
+    "name": "বিশ্বাস মিষ্টান্ন ভান্ডার",
+    "restaurantId": "REST-171EF279",
+    "location": "VVVR+6GQ, Patgati",
+    "contactInfo": "N/A",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Sweets and dessert buffet",
+    "rating": 4.0,
+    "open": false,
+    "ownerUsername": "owner_171ef279",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF1017",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-171EF279"
+      },
+      {
+        "code": "LUNCH1517",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-171EF279"
+      }
+    ]
+  },
+  {
+    "name": "ক্যাফে ভাগ্যের তরী Cafe Bhagya Tari",
+    "restaurantId": "REST-8F2D662F",
+    "location": "VXVR+H7M Cafe Bhagya Tari",
+    "contactInfo": "01707-379495",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Fast food restaurant",
+    "rating": 0.0,
+    "open": true,
+    "ownerUsername": "owner_8f2d662f",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF108F",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-8F2D662F"
+      },
+      {
+        "code": "LUNCH158F",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-8F2D662F"
+      }
+    ]
+  },
+  {
+    "name": "মায়ের দোয়া বিরিয়ানি হাউস",
+    "restaurantId": "REST-0937E619",
+    "location": "VVXV+8X3",
+    "contactInfo": "N/A",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Restaurant",
+    "rating": 0.0,
+    "open": false,
+    "ownerUsername": "owner_0937e619",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF1009",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-0937E619"
+      },
+      {
+        "code": "LUNCH1509",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-0937E619"
+      }
+    ]
+  },
+  {
+    "name": "Riaz Hotel And Restaurant",
+    "restaurantId": "REST-E15E402B",
+    "location": "WV5W+2MR, Tungipara",
+    "contactInfo": "01911-712123",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Restaurant",
+    "rating": 4.6,
+    "open": false,
+    "ownerUsername": "owner_e15e402b",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF10E1",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-E15E402B"
+      },
+      {
+        "code": "LUNCH15E1",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-E15E402B"
+      }
+    ]
+  },
+  {
+    "name": "Hot \u0026 Cool Restaurant \u0026 Juice Bar",
+    "restaurantId": "REST-89C166D6",
+    "location": "WW42+X9W, Tungipara",
+    "contactInfo": "01969-405172",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Fast food restaurant",
+    "rating": 5.0,
+    "open": true,
+    "ownerUsername": "owner_89c166d6",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF1089",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-89C166D6"
+      },
+      {
+        "code": "LUNCH1589",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-89C166D6"
+      }
+    ]
+  },
+  {
+    "name": "জেলা পরিষদ ডাক বাংলো টুঙ্গিপাড়া",
+    "restaurantId": "REST-543437A5",
+    "location": "WW62+J2V, Tungipara",
+    "contactInfo": "N/A",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Restaurant",
+    "rating": 0.0,
+    "open": false,
+    "ownerUsername": "owner_543437a5",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF1054",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-543437A5"
+      },
+      {
+        "code": "LUNCH1554",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-543437A5"
+      }
+    ]
+  },
+  {
+    "name": "সাইম ষ্টোর",
+    "restaurantId": "REST-EFA5ABCA",
+    "location": "WW63+R7G, Baladanga",
+    "contactInfo": "N/A",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Restaurant",
+    "rating": 5.0,
+    "open": false,
+    "ownerUsername": "owner_efa5abca",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF10EF",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-EFA5ABCA"
+      },
+      {
+        "code": "LUNCH15EF",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-EFA5ABCA"
+      }
+    ]
+  },
+  {
+    "name": "সামাদ ফুড সেন্টার (SFC)",
+    "restaurantId": "REST-B88A5A04",
+    "location": "WW62+VVQ, Baladanga",
+    "contactInfo": "N/A",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Restaurant",
+    "rating": 3.0,
+    "open": false,
+    "ownerUsername": "owner_b88a5a04",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF10B8",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-B88A5A04"
+      },
+      {
+        "code": "LUNCH15B8",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-B88A5A04"
+      }
+    ]
+  },
+  {
+    "name": "ক্যাফে ভাগ্যের তরী Cafe Vagger Tari",
+    "restaurantId": "REST-B1531881",
+    "location": "W2FF+8RF Cafe Vagger Tari",
+    "contactInfo": "01707-379495",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Fast food restaurant",
+    "rating": 5.0,
+    "open": true,
+    "ownerUsername": "owner_b1531881",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF10B1",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-B1531881"
+      },
+      {
+        "code": "LUNCH15B1",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-B1531881"
+      }
+    ]
+  },
+  {
+    "name": "বরুন ষ্টোর",
+    "restaurantId": "REST-05C0DEC3",
+    "location": "W2HC+48H",
+    "contactInfo": "N/A",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Restaurant",
+    "rating": 0.0,
+    "open": false,
+    "ownerUsername": "owner_05c0dec3",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF1005",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-05C0DEC3"
+      },
+      {
+        "code": "LUNCH1505",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-05C0DEC3"
+      }
+    ]
+  },
+  {
+    "name": "HABIBUR",
+    "restaurantId": "REST-2C1696CE",
+    "location": "WVMF+XRF",
+    "contactInfo": "N/A",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "American restaurant",
+    "rating": 5.0,
+    "open": false,
+    "ownerUsername": "owner_2c1696ce",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF102C",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-2C1696CE"
+      },
+      {
+        "code": "LUNCH152C",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-2C1696CE"
+      }
+    ]
+  },
+  {
+    "name": "SS coffee house",
+    "restaurantId": "REST-0F72BECF",
+    "location": "WRQM+QJF",
+    "contactInfo": "N/A",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Restaurant",
+    "rating": 0.0,
+    "open": false,
+    "ownerUsername": "owner_0f72becf",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF100F",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-0F72BECF"
+      },
+      {
+        "code": "LUNCH150F",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-0F72BECF"
+      }
+    ]
+  },
+  {
+    "name": "Liton sheikh",
+    "restaurantId": "REST-47B06F8A",
+    "location": "WRRM+4X2",
+    "contactInfo": "N/A",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Restaurant",
+    "rating": 5.0,
+    "open": false,
+    "ownerUsername": "owner_47b06f8a",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF1047",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-47B06F8A"
+      },
+      {
+        "code": "LUNCH1547",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-47B06F8A"
+      }
+    ]
+  },
+  {
+    "name": "বিসমিল্লাহ হোটেল, খালেক বাজার",
+    "restaurantId": "REST-6030F362",
+    "location": "WRRM+4W8, Gopalganj - Tungipara Rd",
+    "contactInfo": "01960-220777",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Restaurant",
+    "rating": 4.3,
+    "open": true,
+    "ownerUsername": "owner_6030f362",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF1060",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-6030F362"
+      },
+      {
+        "code": "LUNCH1560",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-6030F362"
+      }
+    ]
+  },
+  {
+    "name": "Vojon Bari restaurant",
+    "restaurantId": "REST-19DD7103",
+    "location": "WRWG+3GF, Ghonapara",
+    "contactInfo": "01937-343088",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Fast food restaurant",
+    "rating": 2.0,
+    "open": false,
+    "ownerUsername": "owner_19dd7103",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF1019",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-19DD7103"
+      },
+      {
+        "code": "LUNCH1519",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-19DD7103"
+      }
+    ]
+  },
+  {
+    "name": "Saka tee stole",
+    "restaurantId": "REST-1C3C730E",
+    "location": "WRXC+M36, Ghonapara",
+    "contactInfo": "01996-206132",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Restaurant",
+    "rating": 0.0,
+    "open": false,
+    "ownerUsername": "owner_1c3c730e",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF101C",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-1C3C730E"
+      },
+      {
+        "code": "LUNCH151C",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-1C3C730E"
+      }
+    ]
+  },
+  {
+    "name": "আল্লাহ মালিক হোটেল",
+    "restaurantId": "REST-1D02BED3",
+    "location": "XR2C+57F, Vatiapara",
+    "contactInfo": "N/A",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Restaurant",
+    "rating": 0.0,
+    "open": false,
+    "ownerUsername": "owner_1d02bed3",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF101D",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-1D02BED3"
+      },
+      {
+        "code": "LUNCH151D",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-1D02BED3"
+      }
+    ]
+  },
+  {
+    "name": "বারিউল মুরগী ও ডিমের দোকান",
+    "restaurantId": "REST-887A3310",
+    "location": "XR2C+7QG, Gopalganj - Tungipara Rd, Ghonapara",
+    "contactInfo": "01969-322878",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Chicken shop",
+    "rating": 5.0,
+    "open": true,
+    "ownerUsername": "owner_887a3310",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF1088",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-887A3310"
+      },
+      {
+        "code": "LUNCH1588",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-887A3310"
+      }
+    ]
+  },
+  {
+    "name": "Tayeba Restaurant (Bangla and Chinese)",
+    "restaurantId": "REST-ADB3DFE1",
+    "location": "XR2C+8QQ, Gopalganj - Tungipara Rd, Vatiapara",
+    "contactInfo": "01886-354644",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Restaurant",
+    "rating": 5.0,
+    "open": true,
+    "ownerUsername": "owner_adb3dfe1",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF10AD",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-ADB3DFE1"
+      },
+      {
+        "code": "LUNCH15AD",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-ADB3DFE1"
+      }
+    ]
+  },
+  {
+    "name": "ঘোনাপাড়া মিষ্টান্ন ভান্ডার",
+    "restaurantId": "REST-346A5345",
+    "location": "XR2C+9W8, Ghonapara",
+    "contactInfo": "N/A",
+    "email": "N/A",
+    "openingHours": "10:00-22:00",
+    "area": "Dhaka",
+    "cuisine": "Sweets and dessert buffet",
+    "rating": 5.0,
+    "open": false,
+    "ownerUsername": "owner_346a5345",
+    "ownerPassword": "pass123",
+    "menu": [
+      {
+        "name": "Chicken Biryani",
+        "price": 260.0,
+        "category": "Main",
+        "description": "Aromatic basmati with chicken",
+        "isAvailable": true,
+        "quantity": 25,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Spicy"
+        ]
+      },
+      {
+        "name": "Beef Tehari",
+        "price": 280.0,
+        "category": "Main",
+        "description": "Traditional spiced tehari",
+        "isAvailable": true,
+        "quantity": 20,
+        "addOns": [],
+        "options": [
+          "Regular",
+          "Extra Beef"
+        ]
+      },
+      {
+        "name": "Borhani",
+        "price": 60.0,
+        "category": "Beverage",
+        "description": "Classic yogurt drink",
+        "isAvailable": true,
+        "quantity": 40,
+        "addOns": [],
+        "options": [
+          "Glass"
+        ]
+      }
+    ],
+    "coupons": [
+      {
+        "code": "OFF1034",
+        "discountPercent": 10,
+        "isActive": true,
+        "restaurantId": "REST-346A5345"
+      },
+      {
+        "code": "LUNCH1534",
+        "discountPercent": 15,
+        "isActive": true,
+        "restaurantId": "REST-346A5345"
+      }
+    ]
+  }
+]

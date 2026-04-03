@@ -1,0 +1,362 @@
+[
+  {
+    "code": "OFF1059",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-5920F4B6"
+  },
+  {
+    "code": "LUNCH1559",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-5920F4B6"
+  },
+  {
+    "code": "OFF1049",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-49FABE08"
+  },
+  {
+    "code": "LUNCH1549",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-49FABE08"
+  },
+  {
+    "code": "OFF10BF",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-BFD42A5B"
+  },
+  {
+    "code": "LUNCH15BF",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-BFD42A5B"
+  },
+  {
+    "code": "OFF10AB",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-AB263CBA"
+  },
+  {
+    "code": "LUNCH15AB",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-AB263CBA"
+  },
+  {
+    "code": "OFF10D7",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-D788C168"
+  },
+  {
+    "code": "LUNCH15D7",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-D788C168"
+  },
+  {
+    "code": "OFF107F",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-7F2B3E00"
+  },
+  {
+    "code": "LUNCH157F",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-7F2B3E00"
+  },
+  {
+    "code": "OFF10F2",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-F2DAA361"
+  },
+  {
+    "code": "LUNCH15F2",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-F2DAA361"
+  },
+  {
+    "code": "OFF10ED",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-ED0316FD"
+  },
+  {
+    "code": "LUNCH15ED",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-ED0316FD"
+  },
+  {
+    "code": "OFF10C9",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-C9C53486"
+  },
+  {
+    "code": "LUNCH15C9",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-C9C53486"
+  },
+  {
+    "code": "OFF1061",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-6105B7A9"
+  },
+  {
+    "code": "LUNCH1561",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-6105B7A9"
+  },
+  {
+    "code": "OFF1017",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-171EF279"
+  },
+  {
+    "code": "LUNCH1517",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-171EF279"
+  },
+  {
+    "code": "OFF108F",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-8F2D662F"
+  },
+  {
+    "code": "LUNCH158F",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-8F2D662F"
+  },
+  {
+    "code": "OFF1009",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-0937E619"
+  },
+  {
+    "code": "LUNCH1509",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-0937E619"
+  },
+  {
+    "code": "OFF10E1",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-E15E402B"
+  },
+  {
+    "code": "LUNCH15E1",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-E15E402B"
+  },
+  {
+    "code": "OFF1089",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-89C166D6"
+  },
+  {
+    "code": "LUNCH1589",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-89C166D6"
+  },
+  {
+    "code": "OFF1054",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-543437A5"
+  },
+  {
+    "code": "LUNCH1554",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-543437A5"
+  },
+  {
+    "code": "OFF10EF",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-EFA5ABCA"
+  },
+  {
+    "code": "LUNCH15EF",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-EFA5ABCA"
+  },
+  {
+    "code": "OFF10B8",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-B88A5A04"
+  },
+  {
+    "code": "LUNCH15B8",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-B88A5A04"
+  },
+  {
+    "code": "OFF10B1",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-B1531881"
+  },
+  {
+    "code": "LUNCH15B1",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-B1531881"
+  },
+  {
+    "code": "OFF1005",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-05C0DEC3"
+  },
+  {
+    "code": "LUNCH1505",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-05C0DEC3"
+  },
+  {
+    "code": "OFF102C",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-2C1696CE"
+  },
+  {
+    "code": "LUNCH152C",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-2C1696CE"
+  },
+  {
+    "code": "OFF100F",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-0F72BECF"
+  },
+  {
+    "code": "LUNCH150F",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-0F72BECF"
+  },
+  {
+    "code": "OFF1047",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-47B06F8A"
+  },
+  {
+    "code": "LUNCH1547",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-47B06F8A"
+  },
+  {
+    "code": "OFF1060",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-6030F362"
+  },
+  {
+    "code": "LUNCH1560",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-6030F362"
+  },
+  {
+    "code": "OFF1019",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-19DD7103"
+  },
+  {
+    "code": "LUNCH1519",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-19DD7103"
+  },
+  {
+    "code": "OFF101C",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-1C3C730E"
+  },
+  {
+    "code": "LUNCH151C",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-1C3C730E"
+  },
+  {
+    "code": "OFF101D",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-1D02BED3"
+  },
+  {
+    "code": "LUNCH151D",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-1D02BED3"
+  },
+  {
+    "code": "OFF1088",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-887A3310"
+  },
+  {
+    "code": "LUNCH1588",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-887A3310"
+  },
+  {
+    "code": "OFF10AD",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-ADB3DFE1"
+  },
+  {
+    "code": "LUNCH15AD",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-ADB3DFE1"
+  },
+  {
+    "code": "OFF1034",
+    "discountPercent": 10,
+    "isActive": true,
+    "restaurantId": "REST-346A5345"
+  },
+  {
+    "code": "LUNCH1534",
+    "discountPercent": 15,
+    "isActive": true,
+    "restaurantId": "REST-346A5345"
+  }
+]
