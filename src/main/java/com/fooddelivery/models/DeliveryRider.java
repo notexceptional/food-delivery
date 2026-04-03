@@ -6,7 +6,7 @@ public class DeliveryRider {
     private String name;
     private String phone;
     private boolean isAvailable;
-    private String currentOrderId; // null when free
+    private String currentOrderId; 
 
     public DeliveryRider(String name, String phone) {
         this.riderId = "RDR-" + java.util.UUID.randomUUID()

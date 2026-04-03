@@ -1,9 +1,9 @@
 package com.fooddelivery.services;
 
-/**
- * Simulates payment processing.
- * In a real system this would integrate with a payment gateway (bKash, Stripe, etc.)
- */
+
+
+
+
 public class PaymentService {
 
     public enum PaymentMethod {
@@ -12,15 +12,15 @@ public class PaymentService {
         MOBILE_BANKING
     }
 
-    /**
-     * Simulate processing a payment.
-     * @param amount        total amount to charge
-     * @param method        payment method chosen
-     * @param customerName  name of the customer
-     * @return a payment confirmation string / transaction ID
-     */
+    
+
+
+
+
+
+
     public String processPayment(double amount, PaymentMethod method, String customerName) {
-        // Simulate a small processing delay
+        
         try { Thread.sleep(500); } catch (InterruptedException ignored) {}
 
         String txnId = "TXN-" + System.currentTimeMillis();
@@ -29,7 +29,7 @@ public class PaymentService {
         return txnId;
     }
 
-    /** Returns a user-friendly receipt string. */
+    
     public String generateReceipt(String customerName, double amount,
                                    PaymentMethod method, String txnId) {
         return String.format(

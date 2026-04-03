@@ -12,17 +12,17 @@ import jakarta.jws.WebService;
 
 import java.util.List;
 
-/**
- * SOAP Web Service for Food Delivery.
- *
- * WSDL available at: http://localhost:8888/FoodDeliveryService?wsdl
- *
- * Exposed operations:
- *  1. getRestaurantsByArea   - search restaurants by delivery area
- *  2. searchRestaurants      - search by name / cuisine / area keyword
- *  3. getMenuByRestaurantId  - get the full menu of a restaurant
- *  4. getOrderStatus         - check the current status of an order
- */
+
+
+
+
+
+
+
+
+
+
+
 @WebService(name = "FoodDeliveryService",
             serviceName = "FoodDeliveryService",
             targetNamespace = "http://api.fooddelivery.com/")
@@ -32,12 +32,12 @@ public class FoodDeliveryService {
     private final OrderService  orderService  = new OrderService();
     private final DataStore     store         = DataStore.getInstance();
 
-    /**
-     * Get all restaurants available in a given area.
-     *
-     * @param area  e.g. "Gulshan", "Dhanmondi"
-     * @return      formatted list of restaurants (name, cuisine, rating, open/closed)
-     */
+    
+
+
+
+
+
     @WebMethod(operationName = "getRestaurantsByArea")
     public String getRestaurantsByArea(
             @WebParam(name = "area") String area) {
@@ -57,12 +57,12 @@ public class FoodDeliveryService {
         return sb.toString();
     }
 
-    /**
-     * Search all restaurants by keyword (name, cuisine, or area).
-     *
-     * @param query  search keyword
-     * @return       formatted list of matching restaurants
-     */
+    
+
+
+
+
+
     @WebMethod(operationName = "searchRestaurants")
     public String searchRestaurants(
             @WebParam(name = "query") String query) {
@@ -82,12 +82,12 @@ public class FoodDeliveryService {
         return sb.toString();
     }
 
-    /**
-     * Get the full menu of a restaurant by its ID.
-     *
-     * @param restaurantId  the restaurant ID (e.g. REST-A1B2C3D4)
-     * @return              formatted menu listing
-     */
+    
+
+
+
+
+
     @WebMethod(operationName = "getMenuByRestaurantId")
     public String getMenuByRestaurantId(
             @WebParam(name = "restaurantId") String restaurantId) {
@@ -120,12 +120,12 @@ public class FoodDeliveryService {
         return sb.toString();
     }
 
-    /**
-     * Get the current delivery status of an order.
-     *
-     * @param orderId  the order ID (e.g. ORD-A1B2C3D4)
-     * @return         status message with rider info if available
-     */
+    
+
+
+
+
+
     @WebMethod(operationName = "getOrderStatus")
     public String getOrderStatus(
             @WebParam(name = "orderId") String orderId) {

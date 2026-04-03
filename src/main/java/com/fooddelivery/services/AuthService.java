@@ -6,14 +6,14 @@ import com.fooddelivery.storage.DataStore;
 
 import java.util.UUID;
 
-/**
- * Handles customer and restaurant owner registration and login.
- */
+
+
+
 public class AuthService {
 
     private final DataStore store = DataStore.getInstance();
 
-    // ── Customer Auth ──────────────────────────────────────────────────────
+    
 
     public Customer registerCustomer(String username, String password,
                                      String email, String phone, String address) {
@@ -26,7 +26,7 @@ public class AuthService {
         return c;
     }
 
-    /** Returns the Customer on success, or null if credentials are wrong. */
+    
     public Customer loginCustomer(String username, String password) {
         Customer c = store.findCustomerByUsername(username);
         if (c != null && c.getPassword().equals(password)) {
@@ -35,7 +35,7 @@ public class AuthService {
         return null;
     }
 
-    // ── Restaurant Owner Auth ──────────────────────────────────────────────
+    
 
     public Restaurant registerRestaurant(String name, String location, String area,
                                          String contactInfo, String email,
@@ -50,7 +50,7 @@ public class AuthService {
         return r;
     }
 
-    /** Returns the Restaurant on success, or null if credentials are wrong. */
+    
     public Restaurant loginRestaurant(String ownerUsername, String ownerPassword) {
         Restaurant r = store.findRestaurantByOwner(ownerUsername);
         if (r != null && r.getOwnerPassword().equals(ownerPassword)) {

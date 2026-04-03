@@ -5,14 +5,14 @@ import com.fooddelivery.models.Order;
 import com.fooddelivery.models.OrderStatus;
 import com.fooddelivery.storage.DataStore;
 
-/**
- * Assigns riders to orders and manages rider availability.
- */
+
+
+
 public class DeliveryService {
 
     private final DataStore store = DataStore.getInstance();
 
-    /** Assign an available rider to the order. */
+    
     public void assignRider(Order order) {
         DeliveryRider rider = store.findAvailableRider();
         if (rider != null) {
@@ -27,7 +27,7 @@ public class DeliveryService {
         }
     }
 
-    /** Free a rider after delivery or cancellation. */
+    
     public void releaseRider(String riderId) {
         if (riderId == null) return;
         store.getRiders().stream()
@@ -40,14 +40,14 @@ public class DeliveryService {
                 });
     }
 
-    /** Add a new delivery rider to the system. */
+    
     public DeliveryRider addRider(String name, String phone) {
         DeliveryRider rider = new DeliveryRider(name, phone);
         store.addRider(rider);
         return rider;
     }
 
-    /** Get rider info for a given order. */
+    
     public DeliveryRider getRiderForOrder(Order order) {
         if (order.getRiderId() == null) return null;
         return store.getRiders().stream()
@@ -55,7 +55,7 @@ public class DeliveryService {
                 .findFirst().orElse(null);
     }
 
-    /** Returns a readable tracking status message. */
+    
     public String getTrackingMessage(Order order) {
         DeliveryRider rider = getRiderForOrder(order);
         String statusLine = "Status: " + order.getStatus();

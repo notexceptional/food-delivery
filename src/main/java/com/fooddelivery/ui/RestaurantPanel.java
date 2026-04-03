@@ -8,37 +8,37 @@ import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
-/**
- * Restaurant-side UI panel with a CardLayout.
- * Cards: AUTH → DASHBOARD (Menu Management + Orders)
- */
+
+
+
+
 public class RestaurantPanel extends JPanel {
 
-    // ── Colours ───────────────────────────────────────────────────────────
+    
     private static final Color BG      = new Color(30, 30, 46);
     private static final Color CARD_BG = new Color(49, 50, 68);
-    private static final Color ACCENT  = new Color(137, 220, 235);   // teal for restaurant
+    private static final Color ACCENT  = new Color(137, 220, 235);   
     private static final Color GREEN   = new Color(166, 227, 161);
     private static final Color RED     = new Color(243, 139, 168);
     private static final Color FG      = Color.WHITE;
 
-    // ── Services ──────────────────────────────────────────────────────────
+    
     private final AuthService   authService  = new AuthService();
     private final MenuService   menuService  = new MenuService();
     private final OrderService  orderService = new OrderService();
     private final CouponService couponService = new CouponService();
 
-    // ── State ─────────────────────────────────────────────────────────────
+    
     private Restaurant loggedInRestaurant;
 
-    // ── CardLayout ────────────────────────────────────────────────────────
+    
     private final CardLayout cardLayout = new CardLayout();
 
-    // ── Table models ──────────────────────────────────────────────────────
+    
     private DefaultTableModel menuTableModel;
     private DefaultTableModel orderTableModel;
 
-    // ── Dashboard labels ─────────────────────────────────────────────────
+    
     private JLabel dashRestNameLabel;
 
     public RestaurantPanel() {
@@ -49,9 +49,9 @@ public class RestaurantPanel extends JPanel {
         cardLayout.show(this, "AUTH");
     }
 
-    // ═══════════════════════════════════════════════════════════════════════
-    // CARD 1 — AUTH (Login / Register)
-    // ═══════════════════════════════════════════════════════════════════════
+    
+    
+    
     private JPanel buildAuthCard() {
         JPanel root = darkPanel(new BorderLayout());
 
@@ -100,7 +100,7 @@ public class RestaurantPanel extends JPanel {
         btnPanel.add(registerBtn);
         root.add(btnPanel, BorderLayout.SOUTH);
 
-        // ── Login ─────────────────────────────────────────────────────────
+        
         loginBtn.addActionListener(e -> {
             String user = userField.getText().trim();
             String pass = new String(passField.getPassword());
@@ -113,7 +113,7 @@ public class RestaurantPanel extends JPanel {
             cardLayout.show(this, "DASHBOARD");
         });
 
-        // ── Register ──────────────────────────────────────────────────────
+        
         registerBtn.addActionListener(e -> {
             String user  = userField.getText().trim();
             String pass  = new String(passField.getPassword());
@@ -143,13 +143,13 @@ public class RestaurantPanel extends JPanel {
         return root;
     }
 
-    // ═══════════════════════════════════════════════════════════════════════
-    // CARD 2 — DASHBOARD (Menu + Orders in a JSplitPane / JTabbedPane)
-    // ═══════════════════════════════════════════════════════════════════════
+    
+    
+    
     private JPanel buildDashboardCard() {
         JPanel root = darkPanel(new BorderLayout(0, 0));
 
-        // ── Top bar ───────────────────────────────────────────────────────
+        
         JPanel topBar = darkPanel(new FlowLayout(FlowLayout.LEFT, 12, 8));
         topBar.setBackground(new Color(20, 20, 34));
         dashRestNameLabel = styledLabel("Dashboard", Font.BOLD, 16);
@@ -162,7 +162,7 @@ public class RestaurantPanel extends JPanel {
         topBar.add(logoutBtn);
         root.add(topBar, BorderLayout.NORTH);
 
-        // ── Inner tabs: Menu tab + Orders tab ──────────────────────────────
+        
         JTabbedPane innerTabs = new JTabbedPane();
         innerTabs.setBackground(BG);
         innerTabs.setForeground(ACCENT);
@@ -171,7 +171,7 @@ public class RestaurantPanel extends JPanel {
         innerTabs.addTab("📋  Orders",          buildOrdersTab());
         root.add(innerTabs, BorderLayout.CENTER);
 
-        // ── Actions ────────────────────────────────────────────────────────
+        
         toggleOpenBtn.addActionListener(e -> {
             if (loggedInRestaurant == null) return;
             boolean nowOpen = !loggedInRestaurant.isOpen();
@@ -190,12 +190,12 @@ public class RestaurantPanel extends JPanel {
         return root;
     }
 
-    // ── Menu Management tab ───────────────────────────────────────────────
+    
     private JPanel buildMenuManagementTab() {
         JPanel root = darkPanel(new BorderLayout(0, 6));
         root.setBorder(BorderFactory.createEmptyBorder(10, 12, 10, 12));
 
-        // Table
+        
         String[] cols = {"Item Name", "Category", "Price (৳)", "Available", "Stock", "Options"};
         menuTableModel = new DefaultTableModel(cols, 0) {
             public boolean isCellEditable(int r, int c) { return false; }
@@ -207,7 +207,7 @@ public class RestaurantPanel extends JPanel {
         styleScrollPane(scroll);
         root.add(scroll, BorderLayout.CENTER);
 
-        // ── Add item form ─────────────────────────────────────────────────
+        
         JPanel addForm = darkPanel(new GridBagLayout());
         addForm.setBorder(titledBorder("Add Menu Item"));
         GridBagConstraints g = gbc();
@@ -229,7 +229,7 @@ public class RestaurantPanel extends JPanel {
         JLabel addMsg = styledLabel("", Font.PLAIN, 11); addMsg.setForeground(GREEN);
         g.gridx = 0; g.gridy = 6; g.gridwidth = 2; addForm.add(addMsg, g);
 
-        // Buttons row below form
+        
         JPanel formBtns = darkPanel(new FlowLayout(FlowLayout.LEFT, 8, 4));
         JButton addBtn     = accentButton("Add Item");
         JButton removeBtn  = smallButton("Remove Selected");
@@ -244,7 +244,7 @@ public class RestaurantPanel extends JPanel {
         south.add(formBtns,  BorderLayout.SOUTH);
         root.add(south, BorderLayout.SOUTH);
 
-        // ── Actions ────────────────────────────────────────────────────────
+        
         refreshBtn.addActionListener(e -> refreshMenuTable());
 
         addBtn.addActionListener(e -> {
@@ -325,7 +325,7 @@ public class RestaurantPanel extends JPanel {
         return root;
     }
 
-    // ── Orders tab ────────────────────────────────────────────────────────
+    
     private JPanel buildOrdersTab() {
         JPanel root = darkPanel(new BorderLayout(0, 6));
         root.setBorder(BorderFactory.createEmptyBorder(10, 12, 10, 12));
@@ -342,7 +342,7 @@ public class RestaurantPanel extends JPanel {
         styleScrollPane(scroll);
         root.add(scroll, BorderLayout.CENTER);
 
-        // ── Controls ───────────────────────────────────────────────────────
+        
         JPanel controls = darkPanel(new FlowLayout(FlowLayout.LEFT, 10, 8));
         JComboBox<OrderStatus> statusBox = new JComboBox<>(OrderStatus.values());
         statusBox.setBackground(CARD_BG);
@@ -356,7 +356,7 @@ public class RestaurantPanel extends JPanel {
         controls.add(refreshBtn);
         root.add(controls, BorderLayout.SOUTH);
 
-        // ── Actions ────────────────────────────────────────────────────────
+        
         refreshBtn.addActionListener(e -> refreshOrderTable());
 
         updateBtn.addActionListener(e -> {
@@ -373,9 +373,9 @@ public class RestaurantPanel extends JPanel {
         return root;
     }
 
-    // ═══════════════════════════════════════════════════════════════════════
-    // Refresh helpers
-    // ═══════════════════════════════════════════════════════════════════════
+    
+    
+    
     private void refreshDashboard() {
         if (loggedInRestaurant == null) return;
         dashRestNameLabel.setText("🏪  " + loggedInRestaurant.getName()
@@ -415,9 +415,9 @@ public class RestaurantPanel extends JPanel {
         }
     }
 
-    // ═══════════════════════════════════════════════════════════════════════
-    // UI helpers (same pattern as CustomerPanel)
-    // ═══════════════════════════════════════════════════════════════════════
+    
+    
+    
     private JPanel darkPanel(LayoutManager layout) {
         JPanel p = new JPanel(layout);
         p.setBackground(BG);

@@ -10,9 +10,9 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Handles reading and writing application data as JSON files in the /data directory.
- */
+
+
+
 public class JsonStorage {
 
     private static final String DATA_DIR = "data";
@@ -21,7 +21,7 @@ public class JsonStorage {
             .serializeNulls()
             .create();
 
-    // ── Save all ──────────────────────────────────────────────────────────
+    
     public static void saveAll(DataStore store) {
         saveToFile("customers.json",    store.getCustomers());
         saveToFile("restaurants.json",  store.getRestaurants());
@@ -30,7 +30,7 @@ public class JsonStorage {
         saveToFile("riders.json",       store.getRiders());
     }
 
-    // ── Load all ──────────────────────────────────────────────────────────
+    
     public static void loadAll(DataStore store) {
         store.setCustomers(   loadFromFile("customers.json",    new TypeToken<List<Customer>>(){}.getType()));
         store.setRestaurants( loadFromFile("restaurants.json",  new TypeToken<List<Restaurant>>(){}.getType()));
@@ -39,7 +39,7 @@ public class JsonStorage {
         store.setRiders(      loadFromFile("riders.json",       new TypeToken<List<DeliveryRider>>(){}.getType()));
     }
 
-    // ── Helpers ───────────────────────────────────────────────────────────
+    
     private static <T> void saveToFile(String filename, List<T> data) {
         File dir = new File(DATA_DIR);
         if (!dir.exists()) dir.mkdirs();

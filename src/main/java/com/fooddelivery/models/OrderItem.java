@@ -29,7 +29,7 @@ public class OrderItem {
     public List<String> getChosenOptions()                  { return chosenOptions; }
     public void         setChosenOptions(List<String> opts) { this.chosenOptions = opts; }
 
-    /** Convenience: total cost of this line item */
+    
     public double getSubtotal() {
         return unitPrice * quantity;
     }

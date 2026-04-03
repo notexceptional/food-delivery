@@ -3,9 +3,9 @@ package com.fooddelivery.models;
 public class Coupon {
 
     private String code;
-    private int discountPercent; // e.g. 20 means 20% off
+    private int discountPercent; 
     private boolean isActive;
-    private String restaurantId; // null = valid for all restaurants
+    private String restaurantId; 
 
     public Coupon(String code, int discountPercent, String restaurantId) {
         this.code = code;

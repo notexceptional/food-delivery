@@ -5,10 +5,10 @@ import com.fooddelivery.models.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Singleton in-memory store. All services read/write through this class.
- * JsonStorage persists this to disk on every change.
- */
+
+
+
+
 public class DataStore {
 
     private static DataStore instance;
@@ -28,7 +28,7 @@ public class DataStore {
         return instance;
     }
 
-    // ── Customers ──
+    
     public List<Customer>   getCustomers()                         { return customers; }
     public void             setCustomers(List<Customer> customers) { this.customers = customers; }
 
@@ -43,7 +43,7 @@ public class DataStore {
                 .findFirst().orElse(null);
     }
 
-    // ── Restaurants ──
+    
     public List<Restaurant> getRestaurants()                           { return restaurants; }
     public void             setRestaurants(List<Restaurant> list)      { this.restaurants = list; }
 
@@ -64,7 +64,7 @@ public class DataStore {
                 .findFirst().orElse(null);
     }
 
-    // ── Orders ──
+    
     public List<Order>  getOrders()                { return orders; }
     public void         setOrders(List<Order> o)   { this.orders = o; }
 
@@ -83,7 +83,7 @@ public class DataStore {
         JsonStorage.saveAll(this);
     }
 
-    // ── Coupons ──
+    
     public List<Coupon> getCoupons()               { return coupons; }
     public void         setCoupons(List<Coupon> c) { this.coupons = c; }
 
@@ -98,7 +98,7 @@ public class DataStore {
                 .findFirst().orElse(null);
     }
 
-    // ── Riders ──
+    
     public List<DeliveryRider> getRiders()                   { return riders; }
     public void                setRiders(List<DeliveryRider> r) { this.riders = r; }
 

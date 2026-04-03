@@ -10,13 +10,13 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Customer-side UI panel with a CardLayout.
- * Cards: AUTH → BROWSE → MENU → CART → TRACK
- */
+
+
+
+
 public class CustomerPanel extends JPanel {
 
-    // ── Colours ───────────────────────────────────────────────────────────
+    
     private static final Color BG      = new Color(30, 30, 46);
     private static final Color CARD_BG = new Color(49, 50, 68);
     private static final Color ACCENT  = new Color(203, 166, 247);
@@ -24,7 +24,7 @@ public class CustomerPanel extends JPanel {
     private static final Color RED     = new Color(243, 139, 168);
     private static final Color FG      = Color.WHITE;
 
-    // ── Services ──────────────────────────────────────────────────────────
+    
     private final AuthService      authService    = new AuthService();
     private final RestaurantService restService   = new RestaurantService();
     private final SearchService    searchService  = new SearchService();
@@ -33,21 +33,21 @@ public class CustomerPanel extends JPanel {
     private final PaymentService   paymentService = new PaymentService();
     private final OrderService     orderService   = new OrderService();
 
-    // ── State ─────────────────────────────────────────────────────────────
+    
     private Customer        loggedInCustomer;
     private Restaurant      selectedRestaurant;
     private Coupon          appliedCoupon;
 
-    // ── Card navigation ───────────────────────────────────────────────────
+    
     private final CardLayout cardLayout = new CardLayout();
 
-    // ── Table models (reused across refreshes) ────────────────────────────
+    
     private DefaultTableModel restaurantTableModel;
     private DefaultTableModel menuTableModel;
     private DefaultTableModel cartTableModel;
     private DefaultTableModel orderTableModel;
 
-    // ── Labels updated dynamically ────────────────────────────────────────
+    
     private JLabel cartTotalLabel;
     private JLabel discountLabel;
     private JLabel trackStatusLabel;
@@ -68,9 +68,9 @@ public class CustomerPanel extends JPanel {
         cardLayout.show(this, "AUTH");
     }
 
-    // ═══════════════════════════════════════════════════════════════════════
-    // CARD 1 — AUTH (Login / Register)
-    // ═══════════════════════════════════════════════════════════════════════
+    
+    
+    
     private JPanel buildAuthCard() {
         JPanel root = darkPanel(new BorderLayout());
 
@@ -108,7 +108,7 @@ public class CustomerPanel extends JPanel {
         btnPanel.add(registerBtn);
         root.add(btnPanel, BorderLayout.SOUTH);
 
-        // ── Login action ──────────────────────────────────────────────────
+        
         loginBtn.addActionListener(e -> {
             String user = userField.getText().trim();
             String pass = new String(passField.getPassword());
@@ -121,7 +121,7 @@ public class CustomerPanel extends JPanel {
             cardLayout.show(this, "BROWSE");
         });
 
-        // ── Register action ───────────────────────────────────────────────
+        
         registerBtn.addActionListener(e -> {
             String user  = userField.getText().trim();
             String pass  = new String(passField.getPassword());
@@ -144,14 +144,14 @@ public class CustomerPanel extends JPanel {
         return root;
     }
 
-    // ═══════════════════════════════════════════════════════════════════════
-    // CARD 2 — BROWSE restaurants
-    // ═══════════════════════════════════════════════════════════════════════
+    
+    
+    
     private JPanel buildBrowseCard() {
         JPanel root = darkPanel(new BorderLayout(0, 8));
         root.setBorder(BorderFactory.createEmptyBorder(12, 16, 12, 16));
 
-        // ── Top toolbar ───────────────────────────────────────────────────
+        
         JPanel toolbar = darkPanel(new FlowLayout(FlowLayout.LEFT, 10, 4));
         orderSearchField = styledField(22);
         JButton searchBtn  = accentButton("Search");
@@ -171,7 +171,7 @@ public class CustomerPanel extends JPanel {
         toolbar.add(logoutBtn);
         root.add(toolbar, BorderLayout.NORTH);
 
-        // ── Restaurant table ───────────────────────────────────────────────
+        
         String[] cols = {"Restaurant", "Cuisine", "Area", "Rating", "Hours", "Status"};
         restaurantTableModel = new DefaultTableModel(cols, 0) {
             public boolean isCellEditable(int r, int c) { return false; }
@@ -190,7 +190,7 @@ public class CustomerPanel extends JPanel {
         hint.setForeground(new Color(127, 132, 156));
         root.add(hint, BorderLayout.SOUTH);
 
-        // ── Actions ────────────────────────────────────────────────────────
+        
         searchBtn.addActionListener(e -> refreshRestaurantTable(orderSearchField.getText()));
         orderSearchField.addActionListener(e -> refreshRestaurantTable(orderSearchField.getText()));
         sortRating.addActionListener(e -> populateRestaurantTable(restService.sortByRating()));
@@ -199,7 +199,7 @@ public class CustomerPanel extends JPanel {
         trackBtn.addActionListener(e -> { refreshOrderTable(); cardLayout.show(this, "TRACK"); });
         logoutBtn.addActionListener(e -> { loggedInCustomer = null; cardLayout.show(this, "AUTH"); });
 
-        // Double-click → open menu
+        
         table.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent e) {
                 if (e.getClickCount() == 2) {
@@ -219,19 +219,19 @@ public class CustomerPanel extends JPanel {
         return root;
     }
 
-    // ═══════════════════════════════════════════════════════════════════════
-    // CARD 3 — MENU of selected restaurant
-    // ═══════════════════════════════════════════════════════════════════════
+    
+    
+    
     private JPanel buildMenuCard() {
         JPanel root = darkPanel(new BorderLayout(0, 8));
         root.setBorder(BorderFactory.createEmptyBorder(12, 16, 12, 16));
 
-        // ── Title will be set on refresh via a placeholder label ───────────
+        
         JLabel restNameLabel = styledLabel("", Font.BOLD, 18);
         restNameLabel.setName("restNameLabel");
         root.add(restNameLabel, BorderLayout.NORTH);
 
-        // ── Menu table ─────────────────────────────────────────────────────
+        
         String[] cols = {"Item", "Category", "Price (৳)", "Available", "Options"};
         menuTableModel = new DefaultTableModel(cols, 0) {
             public boolean isCellEditable(int r, int c) { return false; }
@@ -242,7 +242,7 @@ public class CustomerPanel extends JPanel {
         styleScrollPane(scroll);
         root.add(scroll, BorderLayout.CENTER);
 
-        // ── Bottom controls ─────────────────────────────────────────────────
+        
         JPanel bottom = darkPanel(new FlowLayout(FlowLayout.LEFT, 10, 8));
         JSpinner qtySpinner = new JSpinner(new SpinnerNumberModel(1, 1, 99, 1));
         qtySpinner.setPreferredSize(new Dimension(55, 28));
@@ -256,7 +256,7 @@ public class CustomerPanel extends JPanel {
         bottom.add(backBtn);
         root.add(bottom, BorderLayout.SOUTH);
 
-        // ── Actions ────────────────────────────────────────────────────────
+        
         backBtn.addActionListener(e -> cardLayout.show(this, "BROWSE"));
         viewCart.addActionListener(e -> { refreshCartTable(); cardLayout.show(this, "CART"); });
 
@@ -272,7 +272,7 @@ public class CustomerPanel extends JPanel {
             }
             int qty = (int) qtySpinner.getValue();
 
-            // Ask for customization options if available
+            
             List<String> chosen = new ArrayList<>();
             if (!item.getOptions().isEmpty()) {
                 String optStr = String.join(", ", item.getOptions());
@@ -288,14 +288,14 @@ public class CustomerPanel extends JPanel {
                     "Cart", JOptionPane.INFORMATION_MESSAGE);
         });
 
-        // Attach restoNameLabel refresh via a workaround — called from refreshMenuTable()
+        
         root.setName("menuCard");
         return root;
     }
 
-    // ═══════════════════════════════════════════════════════════════════════
-    // CARD 4 — CART + Checkout
-    // ═══════════════════════════════════════════════════════════════════════
+    
+    
+    
     private JPanel buildCartCard() {
         JPanel root = darkPanel(new BorderLayout(0, 8));
         root.setBorder(BorderFactory.createEmptyBorder(12, 16, 12, 16));
@@ -303,7 +303,7 @@ public class CustomerPanel extends JPanel {
         JLabel title = styledLabel("Your Cart", Font.BOLD, 18);
         root.add(title, BorderLayout.NORTH);
 
-        // ── Cart table ─────────────────────────────────────────────────────
+        
         String[] cols = {"Item", "Qty", "Unit Price (৳)", "Subtotal (৳)", "Options"};
         cartTableModel = new DefaultTableModel(cols, 0) {
             public boolean isCellEditable(int r, int c) { return false; }
@@ -314,11 +314,11 @@ public class CustomerPanel extends JPanel {
         styleScrollPane(scroll);
         root.add(scroll, BorderLayout.CENTER);
 
-        // ── Bottom section ─────────────────────────────────────────────────
+        
         JPanel southPanel = darkPanel(new BorderLayout(0, 6));
         southPanel.setBorder(BorderFactory.createEmptyBorder(8, 0, 0, 0));
 
-        // Totals + coupon row
+        
         JPanel totalsRow = darkPanel(new FlowLayout(FlowLayout.LEFT, 12, 4));
         cartTotalLabel   = styledLabel("Total: ৳0.00", Font.BOLD, 14);
         discountLabel    = styledLabel("", Font.PLAIN, 12);
@@ -337,7 +337,7 @@ public class CustomerPanel extends JPanel {
         southPanel.add(totalsRow, BorderLayout.NORTH);
         southPanel.add(discountLabel, BorderLayout.CENTER);
 
-        // Action buttons
+        
         JPanel btns = darkPanel(new FlowLayout(FlowLayout.LEFT, 10, 4));
         JButton removeBtn   = smallButton("Remove Selected");
         JButton clearBtn    = smallButton("Clear Cart");
@@ -348,7 +348,7 @@ public class CustomerPanel extends JPanel {
 
         root.add(southPanel, BorderLayout.SOUTH);
 
-        // ── Actions ────────────────────────────────────────────────────────
+        
         backBtn.addActionListener(e -> cardLayout.show(this, "MENU"));
 
         removeBtn.addActionListener(e -> {
@@ -400,7 +400,7 @@ public class CustomerPanel extends JPanel {
                     "Place Order", JOptionPane.YES_NO_OPTION);
             if (confirm != JOptionPane.YES_OPTION) return;
 
-            // Payment
+            
             PaymentService.PaymentMethod method = switch (paymentMethodBox.getSelectedIndex()) {
                 case 1 -> PaymentService.PaymentMethod.CARD;
                 case 2 -> PaymentService.PaymentMethod.MOBILE_BANKING;
@@ -408,7 +408,7 @@ public class CustomerPanel extends JPanel {
             };
             String txnId = paymentService.processPayment(total, method, loggedInCustomer.getUserName());
 
-            // Place order
+            
             List<OrderItem> items = new ArrayList<>(loggedInCustomer.getCart());
             Order order = orderService.placeOrder(loggedInCustomer, selectedRestaurant,
                     items, total, couponCode);
@@ -431,9 +431,9 @@ public class CustomerPanel extends JPanel {
         return root;
     }
 
-    // ═══════════════════════════════════════════════════════════════════════
-    // CARD 5 — TRACK orders
-    // ═══════════════════════════════════════════════════════════════════════
+    
+    
+    
     private JPanel buildTrackCard() {
         JPanel root = darkPanel(new BorderLayout(0, 8));
         root.setBorder(BorderFactory.createEmptyBorder(12, 16, 12, 16));
@@ -441,7 +441,7 @@ public class CustomerPanel extends JPanel {
         JLabel title = styledLabel("My Orders", Font.BOLD, 18);
         root.add(title, BorderLayout.NORTH);
 
-        // ── Order history table ────────────────────────────────────────────
+        
         String[] cols = {"Order ID", "Restaurant", "Total (৳)", "Status", "Date"};
         orderTableModel = new DefaultTableModel(cols, 0) {
             public boolean isCellEditable(int r, int c) { return false; }
@@ -454,7 +454,7 @@ public class CustomerPanel extends JPanel {
         styleScrollPane(scroll);
         root.add(scroll, BorderLayout.CENTER);
 
-        // ── Status display ─────────────────────────────────────────────────
+        
         JPanel statusBox = darkPanel(new BorderLayout(0, 4));
         statusBox.setBorder(titledBorder("Order Status Tracker"));
         trackStatusLabel = styledLabel("Select an order and click Refresh Status.", Font.PLAIN, 13);
@@ -473,7 +473,7 @@ public class CustomerPanel extends JPanel {
         bottomBar.add(btns, BorderLayout.SOUTH);
         root.add(bottomBar, BorderLayout.SOUTH);
 
-        // ── Actions ────────────────────────────────────────────────────────
+        
         backBtn.addActionListener(e -> cardLayout.show(this, "BROWSE"));
 
         refreshBtn.addActionListener(e -> {
@@ -489,9 +489,9 @@ public class CustomerPanel extends JPanel {
         return root;
     }
 
-    // ═══════════════════════════════════════════════════════════════════════
-    // Refresh helpers
-    // ═══════════════════════════════════════════════════════════════════════
+    
+    
+    
     private void refreshRestaurantTable(String query) {
         List<Restaurant> list = query == null || query.isBlank()
                 ? restService.getAllRestaurants()
@@ -522,7 +522,7 @@ public class CustomerPanel extends JPanel {
                     String.join(", ", item.getOptions())
             });
         }
-        // Update the menu card header label
+        
         for (Component comp : getComponents()) {
             if ("menuCard".equals(comp.getName()) && comp instanceof JPanel p) {
                 for (Component c : p.getComponents()) {
@@ -572,9 +572,9 @@ public class CustomerPanel extends JPanel {
                 tracking.substring(tracking.indexOf("Rider:")) : "");
     }
 
-    // ═══════════════════════════════════════════════════════════════════════
-    // UI helpers
-    // ═══════════════════════════════════════════════════════════════════════
+    
+    
+    
     private JPanel darkPanel(LayoutManager layout) {
         JPanel p = new JPanel(layout);
         p.setBackground(BG);

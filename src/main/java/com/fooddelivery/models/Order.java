@@ -8,15 +8,15 @@ import java.util.UUID;
 public class Order {
 
     private String orderId;
-    private String customerId;    // customer username
-    private String restaurantId;  // restaurant ID
+    private String customerId;    
+    private String restaurantId;  
     private String restaurantName;
     private List<OrderItem> items;
     private OrderStatus status;
     private double totalPrice;
     private String couponCode;
     private String timestamp;
-    private String riderId;       // rider assigned (can be null)
+    private String riderId;       
 
     public Order(String customerId, String restaurantId, String restaurantName,
                  List<OrderItem> items, double totalPrice, String couponCode) {
