@@ -34,7 +34,7 @@ public class FoodDeliveryService {
         sb.append("Restaurants in ").append(area).append(":\n");
         sb.append("─".repeat(50)).append("\n");
         for (Restaurant r : results) {
-            sb.append(String.format("%-25s | %-15s | ⭐%.1f | %s%n",
+                sb.append(String.format("%-25s | %-15s | %.1f | %s%n",
                     r.getName(), r.getCuisine(), r.getRating(),
                     r.isOpen() ? "OPEN" : "CLOSED"));
         }
@@ -53,7 +53,7 @@ public class FoodDeliveryService {
         sb.append("Search results for \"").append(query).append("\":\n");
         sb.append("─".repeat(50)).append("\n");
         for (Restaurant r : results) {
-            sb.append(String.format("%-25s | %s | ⭐%.1f | %s%n",
+                sb.append(String.format("%-25s | %s | %.1f | %s%n",
                     r.getName(), r.getArea(), r.getRating(),
                     r.isOpen() ? "OPEN" : "CLOSED"));
         }

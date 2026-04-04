@@ -1,28 +1,58 @@
 package com.fooddelivery.ui;
 
-import com.fooddelivery.models.*;
-import com.fooddelivery.services.*;
-
-import javax.swing.*;
-import javax.swing.border.TitledBorder;
-import javax.swing.table.DefaultTableModel;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Component;
+import java.awt.Cursor;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.Insets;
+import java.awt.LayoutManager;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
+import javax.swing.JSpinner;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.SwingConstants;
+import javax.swing.border.TitledBorder;
+import javax.swing.table.DefaultTableModel;
+
+import com.fooddelivery.models.Coupon;
+import com.fooddelivery.models.Customer;
+import com.fooddelivery.models.Order;
+import com.fooddelivery.models.OrderItem;
+import com.fooddelivery.models.OrderStatus;
+import com.fooddelivery.models.Restaurant;
+import com.fooddelivery.services.AuthService;
+import com.fooddelivery.services.CartService;
+import com.fooddelivery.services.CouponService;
+import com.fooddelivery.services.DeliveryService;
+import com.fooddelivery.services.OrderService;
+import com.fooddelivery.services.PaymentService;
+import com.fooddelivery.services.RestaurantService;
+import com.fooddelivery.services.SearchService;
 
 
 
 
 
 public class CustomerPanel extends JPanel {
-
-    
-    private static final Color BG      = new Color(30, 30, 46);
-    private static final Color CARD_BG = new Color(49, 50, 68);
-    private static final Color ACCENT  = new Color(203, 166, 247);
-    private static final Color GREEN   = new Color(166, 227, 161);
-    private static final Color RED     = new Color(243, 139, 168);
-    private static final Color FG      = Color.WHITE;
 
     
     private final AuthService      authService    = new AuthService();
@@ -52,6 +82,11 @@ public class CustomerPanel extends JPanel {
     private JLabel discountLabel;
     private JLabel trackStatusLabel;
     private JLabel trackRiderLabel;
+    private JLabel dashboardWelcomeLabel;
+    private JLabel dashboardRoleLabel;
+    private JLabel dashboardMessageLabel;
+    private JLabel dashboardOrderHistoryLabel;
+    private JLabel dashboardCurrentOrderLabel;
     private JTextField couponField;
     private JComboBox<String> paymentMethodBox;
     private JTextField orderSearchField;
@@ -59,7 +94,6 @@ public class CustomerPanel extends JPanel {
 
     public CustomerPanel() {
         setLayout(cardLayout);
-        setBackground(BG);
         add(buildAuthCard(),   "AUTH");
         add(buildBrowseCard(), "BROWSE");
         add(buildMenuCard(),   "MENU");
@@ -95,7 +129,7 @@ public class CustomerPanel extends JPanel {
         addRow(form, gbc, 3, "Phone (register only):", phoneField);
         addRow(form, gbc, 4, "Address (register only):", addrField);
 
-        JLabel msg = styledLabel("", Font.PLAIN, 12); msg.setForeground(RED);
+        JLabel msg = styledLabel("", Font.PLAIN, 12);
         gbc.gridx = 0; gbc.gridy = 5; gbc.gridwidth = 2;
         form.add(msg, gbc);
 
@@ -117,6 +151,7 @@ public class CustomerPanel extends JPanel {
             if (c == null) { msg.setText("Invalid username or password."); return; }
             loggedInCustomer = c;
             msg.setText("");
+            refreshCustomerDashboard();
             refreshRestaurantTable("");
             cardLayout.show(this, "BROWSE");
         });
@@ -135,6 +170,7 @@ public class CustomerPanel extends JPanel {
                 Customer c = authService.registerCustomer(user, pass, email, phone, addr);
                 loggedInCustomer = c;
                 msg.setText(""); clearFields(userField, passField, emailField, phoneField, addrField);
+                refreshCustomerDashboard();
                 refreshRestaurantTable("");
                 cardLayout.show(this, "BROWSE");
             } catch (IllegalArgumentException ex) {
@@ -151,17 +187,24 @@ public class CustomerPanel extends JPanel {
         JPanel root = darkPanel(new BorderLayout(0, 8));
         root.setBorder(BorderFactory.createEmptyBorder(12, 16, 12, 16));
 
+        JPanel topSection = darkPanel(new BorderLayout(0, 6));
+        topSection.add(buildCustomerDashboardHeader(), BorderLayout.NORTH);
+
         
         JPanel toolbar = darkPanel(new FlowLayout(FlowLayout.LEFT, 10, 4));
         orderSearchField = styledField(22);
+        JComboBox<String> searchByBox = new JComboBox<>(new String[]{"Restaurant Name", "Location"});
+        styleCombo(searchByBox);
         JButton searchBtn  = accentButton("Search");
         JButton sortRating = smallButton("Sort by Rating ↓");
         JButton sortName   = smallButton("Sort by Name ↑");
-        JButton viewCart   = accentButton("🛒 Cart");
-        JButton trackBtn   = smallButton("📦 My Orders");
+        JButton viewCart   = accentButton("Cart");
+        JButton trackBtn   = smallButton("My Orders");
         JButton logoutBtn  = smallButton("Logout");
         toolbar.add(styledLabel("Search:", Font.PLAIN, 13));
         toolbar.add(orderSearchField);
+        toolbar.add(styledLabel("By:", Font.PLAIN, 13));
+        toolbar.add(searchByBox);
         toolbar.add(searchBtn);
         toolbar.add(sortRating);
         toolbar.add(sortName);
@@ -169,7 +212,8 @@ public class CustomerPanel extends JPanel {
         toolbar.add(viewCart);
         toolbar.add(trackBtn);
         toolbar.add(logoutBtn);
-        root.add(toolbar, BorderLayout.NORTH);
+        topSection.add(toolbar, BorderLayout.SOUTH);
+        root.add(topSection, BorderLayout.NORTH);
 
         
         String[] cols = {"Restaurant", "Cuisine", "Area", "Rating", "Hours", "Status"};
@@ -187,17 +231,25 @@ public class CustomerPanel extends JPanel {
         root.add(scroll, BorderLayout.CENTER);
 
         JLabel hint = styledLabel("Double-click a restaurant to view its menu.", Font.ITALIC, 11);
-        hint.setForeground(new Color(127, 132, 156));
         root.add(hint, BorderLayout.SOUTH);
 
         
-        searchBtn.addActionListener(e -> refreshRestaurantTable(orderSearchField.getText()));
-        orderSearchField.addActionListener(e -> refreshRestaurantTable(orderSearchField.getText()));
+        searchBtn.addActionListener(e ->
+            refreshRestaurantTable(orderSearchField.getText(), (String) searchByBox.getSelectedItem()));
+        orderSearchField.addActionListener(e ->
+            refreshRestaurantTable(orderSearchField.getText(), (String) searchByBox.getSelectedItem()));
         sortRating.addActionListener(e -> populateRestaurantTable(restService.sortByRating()));
         sortName.addActionListener(e -> populateRestaurantTable(restService.sortByName()));
         viewCart.addActionListener(e -> { refreshCartTable(); cardLayout.show(this, "CART"); });
         trackBtn.addActionListener(e -> { refreshOrderTable(); cardLayout.show(this, "TRACK"); });
-        logoutBtn.addActionListener(e -> { loggedInCustomer = null; cardLayout.show(this, "AUTH"); });
+        logoutBtn.addActionListener(e -> {
+            loggedInCustomer = null;
+            dashboardWelcomeLabel.setText("Welcome");
+            dashboardMessageLabel.setText("Please login to view your dashboard.");
+            dashboardOrderHistoryLabel.setText("Order History: 0");
+            dashboardCurrentOrderLabel.setText("Current Order: None");
+            cardLayout.show(this, "AUTH");
+        });
 
         
         table.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -246,9 +298,9 @@ public class CustomerPanel extends JPanel {
         JPanel bottom = darkPanel(new FlowLayout(FlowLayout.LEFT, 10, 8));
         JSpinner qtySpinner = new JSpinner(new SpinnerNumberModel(1, 1, 99, 1));
         qtySpinner.setPreferredSize(new Dimension(55, 28));
-        JButton addToCart = accentButton("➕ Add to Cart");
-        JButton backBtn   = smallButton("← Back");
-        JButton viewCart  = accentButton("🛒 View Cart");
+        JButton addToCart = accentButton("Add to Cart");
+        JButton backBtn   = smallButton("Back");
+        JButton viewCart  = accentButton("View Cart");
         bottom.add(styledLabel("Qty:", Font.PLAIN, 13));
         bottom.add(qtySpinner);
         bottom.add(addToCart);
@@ -284,7 +336,7 @@ public class CustomerPanel extends JPanel {
             }
             cartService.addToCart(loggedInCustomer, item, qty, chosen);
             JOptionPane.showMessageDialog(this,
-                    qty + "x " + item.getName() + " added to cart! ✓",
+                    qty + "x " + item.getName() + " added to cart.",
                     "Cart", JOptionPane.INFORMATION_MESSAGE);
         });
 
@@ -322,7 +374,6 @@ public class CustomerPanel extends JPanel {
         JPanel totalsRow = darkPanel(new FlowLayout(FlowLayout.LEFT, 12, 4));
         cartTotalLabel   = styledLabel("Total: ৳0.00", Font.BOLD, 14);
         discountLabel    = styledLabel("", Font.PLAIN, 12);
-        discountLabel.setForeground(GREEN);
         couponField = styledField(14);
         JButton applyCoupon = smallButton("Apply Coupon");
         paymentMethodBox = new JComboBox<>(new String[]{"Cash on Delivery", "Card", "Mobile Banking"});
@@ -341,8 +392,8 @@ public class CustomerPanel extends JPanel {
         JPanel btns = darkPanel(new FlowLayout(FlowLayout.LEFT, 10, 4));
         JButton removeBtn   = smallButton("Remove Selected");
         JButton clearBtn    = smallButton("Clear Cart");
-        JButton checkoutBtn = accentButton("✅ Place Order");
-        JButton backBtn     = smallButton("← Back to Menu");
+        JButton checkoutBtn = accentButton("Place Order");
+        JButton backBtn     = smallButton("Back to Menu");
         btns.add(removeBtn); btns.add(clearBtn); btns.add(checkoutBtn); btns.add(backBtn);
         southPanel.add(btns, BorderLayout.SOUTH);
 
@@ -371,12 +422,10 @@ public class CustomerPanel extends JPanel {
             String code = couponField.getText().trim();
             Coupon c = couponService.validateCoupon(code, selectedRestaurant.getRestaurantId());
             if (c == null) {
-                discountLabel.setForeground(RED);
                 discountLabel.setText("  Invalid or expired coupon.");
             } else {
                 appliedCoupon = c;
                 double raw = cartService.getCartTotal(loggedInCustomer);
-                discountLabel.setForeground(GREEN);
                 discountLabel.setText("  " + couponService.getDiscountSummary(raw, c));
                 refreshCartTable();
             }
@@ -416,11 +465,12 @@ public class CustomerPanel extends JPanel {
             appliedCoupon = null;
 
             currentTrackOrderId = order.getOrderId();
+            refreshCustomerDashboard();
             refreshCartTable();
             refreshOrderTable();
 
             JOptionPane.showMessageDialog(this,
-                    "Order placed! 🎉\nOrder ID: " + order.getOrderId()
+                    "Order placed!\nOrder ID: " + order.getOrderId()
                             + "\nTxn: " + txnId
                             + "\n\nTracking your order...",
                     "Order Confirmed", JOptionPane.INFORMATION_MESSAGE);
@@ -459,7 +509,6 @@ public class CustomerPanel extends JPanel {
         statusBox.setBorder(titledBorder("Order Status Tracker"));
         trackStatusLabel = styledLabel("Select an order and click Refresh Status.", Font.PLAIN, 13);
         trackRiderLabel  = styledLabel("", Font.PLAIN, 12);
-        trackRiderLabel.setForeground(GREEN);
         statusBox.add(trackStatusLabel, BorderLayout.CENTER);
         statusBox.add(trackRiderLabel, BorderLayout.SOUTH);
 
@@ -467,9 +516,16 @@ public class CustomerPanel extends JPanel {
         bottomBar.add(statusBox, BorderLayout.CENTER);
 
         JPanel btns = darkPanel(new FlowLayout(FlowLayout.LEFT, 10, 6));
-        JButton refreshBtn = accentButton("🔄 Refresh Status");
-        JButton backBtn    = smallButton("← Browse");
-        btns.add(refreshBtn); btns.add(backBtn);
+        JButton refreshBtn = accentButton("Refresh Status");
+        JButton deliveredBtn = smallButton("Delivered");
+        JButton notDeliveredBtn = smallButton("Still Not Delivered");
+        JButton complaintBtn = smallButton("Complaint");
+        JButton backBtn    = smallButton("Browse");
+        btns.add(refreshBtn);
+        btns.add(deliveredBtn);
+        btns.add(notDeliveredBtn);
+        btns.add(complaintBtn);
+        btns.add(backBtn);
         bottomBar.add(btns, BorderLayout.SOUTH);
         root.add(bottomBar, BorderLayout.SOUTH);
 
@@ -486,6 +542,62 @@ public class CustomerPanel extends JPanel {
             if (order != null) { updateTrackPanel(order); refreshOrderTable(); }
         });
 
+        deliveredBtn.addActionListener(e -> {
+            Order order = selectedTrackOrder(table);
+            if (order == null) {
+                return;
+            }
+            if (order.getStatus() == OrderStatus.DELIVERED) {
+                JOptionPane.showMessageDialog(this, "Order is already marked as Delivered.");
+                return;
+            }
+            if (order.getStatus() == OrderStatus.CANCELLED) {
+                JOptionPane.showMessageDialog(this, "Cancelled orders cannot be marked as Delivered.");
+                return;
+            }
+
+            orderService.updateStatus(order.getOrderId(), OrderStatus.DELIVERED);
+            refreshOrderTable();
+            updateTrackPanel(orderService.getOrderById(order.getOrderId()));
+            JOptionPane.showMessageDialog(this, "Thanks. Order marked as Delivered.");
+        });
+
+        notDeliveredBtn.addActionListener(e -> {
+            Order order = selectedTrackOrder(table);
+            if (order == null) {
+                return;
+            }
+            if (order.getStatus() == OrderStatus.DELIVERED) {
+                JOptionPane.showMessageDialog(this,
+                        "This order is already Delivered. Use Complaint if there is an issue.");
+                return;
+            }
+            trackStatusLabel.setText("Order " + order.getOrderId() + " is still not delivered.");
+            JOptionPane.showMessageDialog(this,
+                    "Noted. The order is still pending delivery. You can file a complaint now.");
+        });
+
+        complaintBtn.addActionListener(e -> {
+            Order order = selectedTrackOrder(table);
+            if (order == null) {
+                return;
+            }
+            String message = JOptionPane.showInputDialog(this,
+                    "Write your complaint message:", "Complaint", JOptionPane.PLAIN_MESSAGE);
+            if (message == null) {
+                return;
+            }
+            if (message.isBlank()) {
+                JOptionPane.showMessageDialog(this, "Complaint message cannot be empty.");
+                return;
+            }
+
+                System.out.println("[CustomerPanel] Complaint received for "
+                    + order.getOrderId() + ": " + message.trim());
+            JOptionPane.showMessageDialog(this,
+                    "Complaint received for order " + order.getOrderId() + ".");
+        });
+
         return root;
     }
 
@@ -493,9 +605,23 @@ public class CustomerPanel extends JPanel {
     
     
     private void refreshRestaurantTable(String query) {
-        List<Restaurant> list = query == null || query.isBlank()
-                ? restService.getAllRestaurants()
-                : searchService.searchRestaurants(query);
+        refreshRestaurantTable(query, "Restaurant Name");
+    }
+
+    private void refreshRestaurantTable(String query, String searchBy) {
+        if (query == null || query.isBlank()) {
+            populateRestaurantTable(restService.getAllRestaurants());
+            return;
+        }
+
+        String q = query.toLowerCase().trim();
+        boolean byLocation = "Location".equalsIgnoreCase(searchBy);
+        List<Restaurant> list = searchService.searchRestaurants(query);
+        list = list.stream()
+                .filter(r -> byLocation
+                ? r.getArea().toLowerCase().contains(q)
+                : r.getName().toLowerCase().contains(q))
+                .toList();
         populateRestaurantTable(list);
     }
 
@@ -504,7 +630,7 @@ public class CustomerPanel extends JPanel {
         for (Restaurant r : list) {
             restaurantTableModel.addRow(new Object[]{
                     r.getName(), r.getCuisine(), r.getArea(),
-                    String.format("⭐ %.1f", r.getRating()),
+                    String.format("%.1f", r.getRating()),
                     r.getOpeningHours(),
                     r.isOpen() ? "OPEN" : "CLOSED"
             });
@@ -518,7 +644,7 @@ public class CustomerPanel extends JPanel {
             menuTableModel.addRow(new Object[]{
                     item.getName(), item.getCategory(),
                     String.format("%.2f", item.getPrice()),
-                    item.isAvailable() ? "✓" : "✗",
+                    item.isAvailable() ? "Yes" : "No",
                     String.join(", ", item.getOptions())
             });
         }
@@ -562,29 +688,96 @@ public class CustomerPanel extends JPanel {
                     o.getTimestamp()
             });
         }
+        refreshCustomerDashboard();
     }
 
     private void updateTrackPanel(Order order) {
         DeliveryService ds = new DeliveryService();
-        trackStatusLabel.setText("Order " + order.getOrderId() + " → " + order.getStatus());
+        trackStatusLabel.setText("Order " + order.getOrderId() + " -> " + order.getStatus());
         String tracking = ds.getTrackingMessage(order);
         trackRiderLabel.setText(tracking.contains("Rider:") ?
                 tracking.substring(tracking.indexOf("Rider:")) : "");
+    }
+
+    private Order selectedTrackOrder(JTable table) {
+        int row = table.getSelectedRow();
+        if (row >= 0) {
+            currentTrackOrderId = (String) orderTableModel.getValueAt(row, 0);
+        }
+        if (currentTrackOrderId == null) {
+            JOptionPane.showMessageDialog(this, "Please select an order first.");
+            return null;
+        }
+        Order order = orderService.getOrderById(currentTrackOrderId);
+        if (order == null) {
+            JOptionPane.showMessageDialog(this, "Order not found.");
+            return null;
+        }
+        return order;
+    }
+
+    private JPanel buildCustomerDashboardHeader() {
+        JPanel box = darkPanel(new GridLayout(0, 1, 0, 2));
+        box.setBorder(titledBorder("Dashboard"));
+
+        dashboardWelcomeLabel = styledLabel("Welcome", Font.BOLD, 14);
+        dashboardRoleLabel = styledLabel("Role: Customer", Font.PLAIN, 12);
+        dashboardMessageLabel = styledLabel("Use search to find restaurants and place orders.", Font.PLAIN, 12);
+        dashboardOrderHistoryLabel = styledLabel("Order History: 0", Font.PLAIN, 12);
+        dashboardCurrentOrderLabel = styledLabel("Current Order: None", Font.PLAIN, 12);
+
+        box.add(dashboardWelcomeLabel);
+        box.add(dashboardRoleLabel);
+        box.add(dashboardMessageLabel);
+        box.add(dashboardOrderHistoryLabel);
+        box.add(dashboardCurrentOrderLabel);
+        return box;
+    }
+
+    private void refreshCustomerDashboard() {
+        if (dashboardWelcomeLabel == null) {
+            return;
+        }
+        if (loggedInCustomer == null) {
+            dashboardWelcomeLabel.setText("Welcome");
+            dashboardRoleLabel.setText("Role: Customer");
+            dashboardMessageLabel.setText("Please login to view your dashboard.");
+            dashboardOrderHistoryLabel.setText("Order History: 0");
+            dashboardCurrentOrderLabel.setText("Current Order: None");
+            return;
+        }
+
+        List<Order> orders = orderService.getOrdersByCustomer(loggedInCustomer.getUserName());
+        long activeCount = orders.stream()
+                .filter(o -> o.getStatus() != OrderStatus.DELIVERED && o.getStatus() != OrderStatus.CANCELLED)
+                .count();
+
+        String currentOrderText = "Current Order: None";
+        for (int i = orders.size() - 1; i >= 0; i--) {
+            Order o = orders.get(i);
+            if (o.getStatus() != OrderStatus.DELIVERED && o.getStatus() != OrderStatus.CANCELLED) {
+                currentOrderText = "Current Order: " + o.getOrderId() + " (" + o.getStatus() + ")";
+                break;
+            }
+        }
+
+        dashboardWelcomeLabel.setText("Welcome, " + loggedInCustomer.getUserName());
+        dashboardRoleLabel.setText("Role: Customer");
+        dashboardMessageLabel.setText("You have " + activeCount + " active order(s). Track or update from My Orders.");
+        dashboardOrderHistoryLabel.setText("Order History: " + orders.size());
+        dashboardCurrentOrderLabel.setText(currentOrderText);
     }
 
     
     
     
     private JPanel darkPanel(LayoutManager layout) {
-        JPanel p = new JPanel(layout);
-        p.setBackground(BG);
-        return p;
+        return new JPanel(layout);
     }
 
     private JLabel styledLabel(String text, int style, int size) {
         JLabel l = new JLabel(text);
         l.setFont(new Font("Segoe UI", style, size));
-        l.setForeground(FG);
         return l;
     }
 
@@ -595,68 +788,45 @@ public class CustomerPanel extends JPanel {
     }
 
     private void styleField(JTextField f) {
-        f.setBackground(CARD_BG);
-        f.setForeground(FG);
-        f.setCaretColor(FG);
         f.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-        f.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createLineBorder(new Color(88, 91, 112)),
-                BorderFactory.createEmptyBorder(4, 6, 4, 6)));
+        f.setBorder(BorderFactory.createEmptyBorder(4, 6, 4, 6));
     }
 
     private JButton accentButton(String text) {
         JButton b = new JButton(text);
-        b.setBackground(ACCENT);
-        b.setForeground(new Color(30, 30, 46));
         b.setFont(new Font("Segoe UI", Font.BOLD, 13));
         b.setFocusPainted(false);
-        b.setBorderPainted(false);
         b.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         return b;
     }
 
     private JButton smallButton(String text) {
         JButton b = new JButton(text);
-        b.setBackground(CARD_BG);
-        b.setForeground(FG);
         b.setFont(new Font("Segoe UI", Font.PLAIN, 12));
         b.setFocusPainted(false);
-        b.setBorderPainted(false);
         b.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         return b;
     }
 
     private JTable styledTable(DefaultTableModel model) {
         JTable t = new JTable(model);
-        t.setBackground(CARD_BG);
-        t.setForeground(FG);
         t.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-        t.getTableHeader().setBackground(new Color(69, 71, 90));
-        t.getTableHeader().setForeground(ACCENT);
         t.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 13));
-        t.setGridColor(new Color(69, 71, 90));
-        t.setSelectionBackground(new Color(88, 91, 112));
-        t.setSelectionForeground(FG);
         t.setShowGrid(true);
         return t;
     }
 
     private void styleScrollPane(JScrollPane sp) {
-        sp.getViewport().setBackground(CARD_BG);
-        sp.setBorder(BorderFactory.createLineBorder(new Color(69, 71, 90)));
+        sp.setBorder(BorderFactory.createEmptyBorder());
     }
 
     private void styleCombo(JComboBox<String> box) {
-        box.setBackground(CARD_BG);
-        box.setForeground(FG);
         box.setFont(new Font("Segoe UI", Font.PLAIN, 13));
     }
 
     private TitledBorder titledBorder(String title) {
         TitledBorder b = BorderFactory.createTitledBorder(title);
-        b.setTitleColor(ACCENT);
         b.setTitleFont(new Font("Segoe UI", Font.BOLD, 12));
-        b.setBorder(BorderFactory.createLineBorder(new Color(88, 91, 112)));
         return b;
     }
 

@@ -4,38 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92ee43dc-8e6c-4624-8070-fb2894efc5d1" name="Changes" comment="final 0">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cp.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/restaurants.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/restaurants.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/api/FoodDeliveryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/api/FoodDeliveryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/Coupon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/Coupon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/DeliveryRider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/DeliveryRider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/MenuItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/OrderItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/OrderStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/Restaurant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/CartService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/CouponService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/CouponService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/DeliveryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/DeliveryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/MenuService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/PaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/RestaurantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/RestaurantService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/SearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/services/SearchService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/storage/DataStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/storage/DataStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fooddelivery/storage/JsonStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fooddelivery/storage/JsonStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
-    </list>
+    <list default="true" id="92ee43dc-8e6c-4624-8070-fb2894efc5d1" name="Changes" comment="tiran" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +18,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -171,7 +146,31 @@
       <option name="project" value="LOCAL" />
       <updated>1775221980053</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="tiran">
+      <option name="closed" value="true" />
+      <created>1775243037458</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1775243037458</updated>
+    </task>
+    <task id="LOCAL-00008" summary="tiran">
+      <option name="closed" value="true" />
+      <created>1775243055254</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1775243055254</updated>
+    </task>
+    <task id="LOCAL-00009" summary="tiran">
+      <option name="closed" value="true" />
+      <created>1775243208666</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1775243208666</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,7 +189,8 @@
     <MESSAGE value="uy" />
     <MESSAGE value="final" />
     <MESSAGE value="final 0" />
-    <option name="LAST_COMMIT_MESSAGE" value="final 0" />
+    <MESSAGE value="tiran" />
+    <option name="LAST_COMMIT_MESSAGE" value="tiran" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
