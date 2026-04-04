@@ -9,7 +9,6 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.LayoutManager;
 import java.util.ArrayList;
@@ -82,11 +81,6 @@ public class CustomerPanel extends JPanel {
     private JLabel discountLabel;
     private JLabel trackStatusLabel;
     private JLabel trackRiderLabel;
-    private JLabel dashboardWelcomeLabel;
-    private JLabel dashboardRoleLabel;
-    private JLabel dashboardMessageLabel;
-    private JLabel dashboardOrderHistoryLabel;
-    private JLabel dashboardCurrentOrderLabel;
     private JTextField couponField;
     private JComboBox<String> paymentMethodBox;
     private JTextField orderSearchField;
@@ -151,7 +145,6 @@ public class CustomerPanel extends JPanel {
             if (c == null) { msg.setText("Invalid username or password."); return; }
             loggedInCustomer = c;
             msg.setText("");
-            refreshCustomerDashboard();
             refreshRestaurantTable("");
             cardLayout.show(this, "BROWSE");
         });
@@ -170,7 +163,6 @@ public class CustomerPanel extends JPanel {
                 Customer c = authService.registerCustomer(user, pass, email, phone, addr);
                 loggedInCustomer = c;
                 msg.setText(""); clearFields(userField, passField, emailField, phoneField, addrField);
-                refreshCustomerDashboard();
                 refreshRestaurantTable("");
                 cardLayout.show(this, "BROWSE");
             } catch (IllegalArgumentException ex) {
@@ -186,9 +178,6 @@ public class CustomerPanel extends JPanel {
     private JPanel buildBrowseCard() {
         JPanel root = darkPanel(new BorderLayout(0, 8));
         root.setBorder(BorderFactory.createEmptyBorder(12, 16, 12, 16));
-
-        JPanel topSection = darkPanel(new BorderLayout(0, 6));
-        topSection.add(buildCustomerDashboardHeader(), BorderLayout.NORTH);
 
         
         JPanel toolbar = darkPanel(new FlowLayout(FlowLayout.LEFT, 10, 4));
@@ -212,8 +201,7 @@ public class CustomerPanel extends JPanel {
         toolbar.add(viewCart);
         toolbar.add(trackBtn);
         toolbar.add(logoutBtn);
-        topSection.add(toolbar, BorderLayout.SOUTH);
-        root.add(topSection, BorderLayout.NORTH);
+        root.add(toolbar, BorderLayout.NORTH);
 
         
         String[] cols = {"Restaurant", "Cuisine", "Area", "Rating", "Hours", "Status"};
@@ -242,14 +230,7 @@ public class CustomerPanel extends JPanel {
         sortName.addActionListener(e -> populateRestaurantTable(restService.sortByName()));
         viewCart.addActionListener(e -> { refreshCartTable(); cardLayout.show(this, "CART"); });
         trackBtn.addActionListener(e -> { refreshOrderTable(); cardLayout.show(this, "TRACK"); });
-        logoutBtn.addActionListener(e -> {
-            loggedInCustomer = null;
-            dashboardWelcomeLabel.setText("Welcome");
-            dashboardMessageLabel.setText("Please login to view your dashboard.");
-            dashboardOrderHistoryLabel.setText("Order History: 0");
-            dashboardCurrentOrderLabel.setText("Current Order: None");
-            cardLayout.show(this, "AUTH");
-        });
+        logoutBtn.addActionListener(e -> { loggedInCustomer = null; cardLayout.show(this, "AUTH"); });
 
         
         table.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -465,7 +446,6 @@ public class CustomerPanel extends JPanel {
             appliedCoupon = null;
 
             currentTrackOrderId = order.getOrderId();
-            refreshCustomerDashboard();
             refreshCartTable();
             refreshOrderTable();
 
@@ -688,7 +668,6 @@ public class CustomerPanel extends JPanel {
                     o.getTimestamp()
             });
         }
-        refreshCustomerDashboard();
     }
 
     private void updateTrackPanel(Order order) {
@@ -716,61 +695,6 @@ public class CustomerPanel extends JPanel {
         return order;
     }
 
-    private JPanel buildCustomerDashboardHeader() {
-        JPanel box = darkPanel(new GridLayout(0, 1, 0, 2));
-        box.setBorder(titledBorder("Dashboard"));
-
-        dashboardWelcomeLabel = styledLabel("Welcome", Font.BOLD, 14);
-        dashboardRoleLabel = styledLabel("Role: Customer", Font.PLAIN, 12);
-        dashboardMessageLabel = styledLabel("Use search to find restaurants and place orders.", Font.PLAIN, 12);
-        dashboardOrderHistoryLabel = styledLabel("Order History: 0", Font.PLAIN, 12);
-        dashboardCurrentOrderLabel = styledLabel("Current Order: None", Font.PLAIN, 12);
-
-        box.add(dashboardWelcomeLabel);
-        box.add(dashboardRoleLabel);
-        box.add(dashboardMessageLabel);
-        box.add(dashboardOrderHistoryLabel);
-        box.add(dashboardCurrentOrderLabel);
-        return box;
-    }
-
-    private void refreshCustomerDashboard() {
-        if (dashboardWelcomeLabel == null) {
-            return;
-        }
-        if (loggedInCustomer == null) {
-            dashboardWelcomeLabel.setText("Welcome");
-            dashboardRoleLabel.setText("Role: Customer");
-            dashboardMessageLabel.setText("Please login to view your dashboard.");
-            dashboardOrderHistoryLabel.setText("Order History: 0");
-            dashboardCurrentOrderLabel.setText("Current Order: None");
-            return;
-        }
-
-        List<Order> orders = orderService.getOrdersByCustomer(loggedInCustomer.getUserName());
-        long activeCount = orders.stream()
-                .filter(o -> o.getStatus() != OrderStatus.DELIVERED && o.getStatus() != OrderStatus.CANCELLED)
-                .count();
-
-        String currentOrderText = "Current Order: None";
-        for (int i = orders.size() - 1; i >= 0; i--) {
-            Order o = orders.get(i);
-            if (o.getStatus() != OrderStatus.DELIVERED && o.getStatus() != OrderStatus.CANCELLED) {
-                currentOrderText = "Current Order: " + o.getOrderId() + " (" + o.getStatus() + ")";
-                break;
-            }
-        }
-
-        dashboardWelcomeLabel.setText("Welcome, " + loggedInCustomer.getUserName());
-        dashboardRoleLabel.setText("Role: Customer");
-        dashboardMessageLabel.setText("You have " + activeCount + " active order(s). Track or update from My Orders.");
-        dashboardOrderHistoryLabel.setText("Order History: " + orders.size());
-        dashboardCurrentOrderLabel.setText(currentOrderText);
-    }
-
-    
-    
-    
     private JPanel darkPanel(LayoutManager layout) {
         return new JPanel(layout);
     }

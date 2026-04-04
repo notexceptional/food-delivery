@@ -7,10 +7,8 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.LayoutManager;
-import java.util.List;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -61,11 +59,6 @@ public class RestaurantPanel extends JPanel {
 
     
     private JLabel dashRestNameLabel;
-    private JLabel ownerWelcomeLabel;
-    private JLabel ownerRoleLabel;
-    private JLabel ownerMessageLabel;
-    private JLabel ownerOrderHistoryLabel;
-    private JLabel ownerCurrentOrdersLabel;
 
     public RestaurantPanel() {
         setLayout(cardLayout);
@@ -172,17 +165,15 @@ public class RestaurantPanel extends JPanel {
     private JPanel buildDashboardCard() {
         JPanel root = darkPanel(new BorderLayout(0, 0));
 
-        JPanel topBar = darkPanel(new BorderLayout(0, 6));
-        JPanel headerActions = darkPanel(new FlowLayout(FlowLayout.LEFT, 12, 8));
+        
+        JPanel topBar = darkPanel(new FlowLayout(FlowLayout.LEFT, 12, 8));
         dashRestNameLabel = styledLabel("Dashboard", Font.BOLD, 16);
         JButton toggleOpenBtn = accentButton("Toggle Open/Close");
         JButton logoutBtn     = smallButton("Logout");
-        headerActions.add(dashRestNameLabel);
-        headerActions.add(Box.createHorizontalStrut(20));
-        headerActions.add(toggleOpenBtn);
-        headerActions.add(logoutBtn);
-        topBar.add(headerActions, BorderLayout.NORTH);
-        topBar.add(buildOwnerDashboardInfo(), BorderLayout.SOUTH);
+        topBar.add(dashRestNameLabel);
+        topBar.add(Box.createHorizontalStrut(20));
+        topBar.add(toggleOpenBtn);
+        topBar.add(logoutBtn);
         root.add(topBar, BorderLayout.NORTH);
 
         
@@ -401,34 +392,8 @@ public class RestaurantPanel extends JPanel {
                 + "  (" + loggedInRestaurant.getArea() + ")  "
             + (loggedInRestaurant.isOpen() ? "OPEN" : "CLOSED"));
 
-        List<Order> orders = orderService.getOrdersByRestaurant(loggedInRestaurant.getRestaurantId());
-        List<Order> activeOrders = orderService.getActiveOrdersForRestaurant(loggedInRestaurant.getRestaurantId());
-        ownerWelcomeLabel.setText("Welcome, " + loggedInRestaurant.getOwnerUsername());
-        ownerRoleLabel.setText("Role: Business Owner (Restaurant)");
-        ownerMessageLabel.setText("Manage menu and keep order statuses updated.");
-        ownerOrderHistoryLabel.setText("Order History: " + orders.size());
-        ownerCurrentOrdersLabel.setText("Current Orders: " + activeOrders.size());
-
         refreshMenuTable();
         refreshOrderTable();
-    }
-
-    private JPanel buildOwnerDashboardInfo() {
-        JPanel info = darkPanel(new GridLayout(0, 1, 0, 2));
-        info.setBorder(titledBorder("Owner Dashboard"));
-
-        ownerWelcomeLabel = styledLabel("Welcome", Font.BOLD, 13);
-        ownerRoleLabel = styledLabel("Role: Business Owner (Restaurant)", Font.PLAIN, 12);
-        ownerMessageLabel = styledLabel("Manage menu and keep order statuses updated.", Font.PLAIN, 12);
-        ownerOrderHistoryLabel = styledLabel("Order History: 0", Font.PLAIN, 12);
-        ownerCurrentOrdersLabel = styledLabel("Current Orders: 0", Font.PLAIN, 12);
-
-        info.add(ownerWelcomeLabel);
-        info.add(ownerRoleLabel);
-        info.add(ownerMessageLabel);
-        info.add(ownerOrderHistoryLabel);
-        info.add(ownerCurrentOrdersLabel);
-        return info;
     }
 
     private void refreshMenuTable() {
