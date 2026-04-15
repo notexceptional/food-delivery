@@ -40,5 +40,26 @@
     "couponCode": "",
     "timestamp": "2026-04-04 12:25:02",
     "riderId": null
+  },
+  {
+    "orderId": "ORD-69FB3A8F",
+    "customerId": "tiran",
+    "restaurantId": "REST-AB263CBA",
+    "restaurantName": "Saddam Hotel and Restaurant",
+    "items": [
+      {
+        "menuItemName": "Beef Tehari",
+        "unitPrice": 280.0,
+        "quantity": 5,
+        "chosenOptions": [
+          "extra beef"
+        ]
+      }
+    ],
+    "status": "DELIVERED",
+    "totalPrice": 1400.0,
+    "couponCode": "",
+    "timestamp": "2026-04-06 19:54:57",
+    "riderId": null
   }
 ]

@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92ee43dc-8e6c-4624-8070-fb2894efc5d1" name="Changes" comment="tiran" />
+    <list default="true" id="92ee43dc-8e6c-4624-8070-fb2894efc5d1" name="Changes" comment="tiran new">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/customers.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/customers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/orders.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/orders.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -170,7 +174,23 @@
       <option name="project" value="LOCAL" />
       <updated>1775243208666</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="tiran new">
+      <option name="closed" value="true" />
+      <created>1775284213318</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1775284213318</updated>
+    </task>
+    <task id="LOCAL-00011" summary="tiran new">
+      <option name="closed" value="true" />
+      <created>1775284352165</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1775284352165</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,7 +210,8 @@
     <MESSAGE value="final" />
     <MESSAGE value="final 0" />
     <MESSAGE value="tiran" />
-    <option name="LAST_COMMIT_MESSAGE" value="tiran" />
+    <MESSAGE value="tiran new" />
+    <option name="LAST_COMMIT_MESSAGE" value="tiran new" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
