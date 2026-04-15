@@ -1,26 +1,45 @@
 package com.fooddelivery.ui;
 
-import com.fooddelivery.models.*;
-import com.fooddelivery.services.*;
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Cursor;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.awt.LayoutManager;
 
-import javax.swing.*;
+import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
-import java.awt.*;
+
+import com.fooddelivery.models.Order;
+import com.fooddelivery.models.OrderStatus;
+import com.fooddelivery.models.Restaurant;
+import com.fooddelivery.services.AuthService;
+import com.fooddelivery.services.CouponService;
+import com.fooddelivery.services.MenuService;
+import com.fooddelivery.services.OrderService;
 
 
 
 
 
 public class RestaurantPanel extends JPanel {
-
-    
-    private static final Color BG      = new Color(30, 30, 46);
-    private static final Color CARD_BG = new Color(49, 50, 68);
-    private static final Color ACCENT  = new Color(137, 220, 235);   
-    private static final Color GREEN   = new Color(166, 227, 161);
-    private static final Color RED     = new Color(243, 139, 168);
-    private static final Color FG      = Color.WHITE;
 
     
     private final AuthService   authService  = new AuthService();
@@ -43,7 +62,6 @@ public class RestaurantPanel extends JPanel {
 
     public RestaurantPanel() {
         setLayout(cardLayout);
-        setBackground(BG);
         add(buildAuthCard(),      "AUTH");
         add(buildDashboardCard(), "DASHBOARD");
         cardLayout.show(this, "AUTH");
@@ -83,13 +101,11 @@ public class RestaurantPanel extends JPanel {
         addRow(form, gbc, 7, "Phone (reg):",      phoneField);
         addRow(form, gbc, 8, "Opening Hours (reg):", hoursField);
 
-        JLabel msg = styledLabel("", Font.PLAIN, 12); msg.setForeground(RED);
+        JLabel msg = styledLabel("", Font.PLAIN, 12);
         gbc.gridx = 0; gbc.gridy = 9; gbc.gridwidth = 2;
         form.add(msg, gbc);
 
         JScrollPane scroll = new JScrollPane(form);
-        scroll.setBackground(BG);
-        scroll.getViewport().setBackground(BG);
         scroll.setBorder(null);
         root.add(scroll, BorderLayout.CENTER);
 
@@ -151,9 +167,7 @@ public class RestaurantPanel extends JPanel {
 
         
         JPanel topBar = darkPanel(new FlowLayout(FlowLayout.LEFT, 12, 8));
-        topBar.setBackground(new Color(20, 20, 34));
         dashRestNameLabel = styledLabel("Dashboard", Font.BOLD, 16);
-        dashRestNameLabel.setForeground(ACCENT);
         JButton toggleOpenBtn = accentButton("Toggle Open/Close");
         JButton logoutBtn     = smallButton("Logout");
         topBar.add(dashRestNameLabel);
@@ -164,11 +178,9 @@ public class RestaurantPanel extends JPanel {
 
         
         JTabbedPane innerTabs = new JTabbedPane();
-        innerTabs.setBackground(BG);
-        innerTabs.setForeground(ACCENT);
         innerTabs.setFont(new Font("Segoe UI", Font.BOLD, 13));
-        innerTabs.addTab("🍽  Menu Management", buildMenuManagementTab());
-        innerTabs.addTab("📋  Orders",          buildOrdersTab());
+        innerTabs.addTab("Menu Management", buildMenuManagementTab());
+        innerTabs.addTab("Orders",          buildOrdersTab());
         root.add(innerTabs, BorderLayout.CENTER);
 
         
@@ -179,7 +191,7 @@ public class RestaurantPanel extends JPanel {
             com.fooddelivery.storage.DataStore.getInstance().saveChanges();
             refreshDashboard();
             JOptionPane.showMessageDialog(this,
-                    "Restaurant is now " + (nowOpen ? "OPEN 🟢" : "CLOSED 🔴"));
+                    "Restaurant is now " + (nowOpen ? "OPEN" : "CLOSED"));
         });
 
         logoutBtn.addActionListener(e -> {
@@ -223,10 +235,10 @@ public class RestaurantPanel extends JPanel {
         addRow(addForm, g, 1, "Description:", descF);
         addRow(addForm, g, 2, "Category:",    catF);
         addRow(addForm, g, 3, "Price (৳):",   priceF);
-        addRow(addForm, g, 4, "Stock (-1=∞):", stockF);
+        addRow(addForm, g, 4, "Stock (-1=unlimited):", stockF);
         addRow(addForm, g, 5, "Options (comma-sep):", optF);
 
-        JLabel addMsg = styledLabel("", Font.PLAIN, 11); addMsg.setForeground(GREEN);
+        JLabel addMsg = styledLabel("", Font.PLAIN, 11);
         g.gridx = 0; g.gridy = 6; g.gridwidth = 2; addForm.add(addMsg, g);
 
         
@@ -256,7 +268,7 @@ public class RestaurantPanel extends JPanel {
             String s = stockF.getText().trim();
             String o = optF.getText().trim();
             if (n.isEmpty() || p.isEmpty()) {
-                addMsg.setForeground(RED); addMsg.setText("Name and Price are required."); return;
+                addMsg.setText("Name and Price are required."); return;
             }
             try {
                 double price = Double.parseDouble(p);
@@ -268,10 +280,10 @@ public class RestaurantPanel extends JPanel {
                 }
                 menuService.addItem(loggedInRestaurant, item);
                 clearFields(nameF, descF, catF, priceF, stockF, optF);
-                addMsg.setForeground(GREEN); addMsg.setText("Item '" + n + "' added! ✓");
+                addMsg.setText("Item '" + n + "' added.");
                 refreshMenuTable();
             } catch (NumberFormatException ex) {
-                addMsg.setForeground(RED); addMsg.setText("Invalid price or stock value.");
+                addMsg.setText("Invalid price or stock value.");
             }
         });
 
@@ -283,7 +295,7 @@ public class RestaurantPanel extends JPanel {
                     "Remove '" + itemName + "'?", "Confirm", JOptionPane.YES_NO_OPTION);
             if (confirm == JOptionPane.YES_OPTION) {
                 menuService.removeItem(loggedInRestaurant, itemName);
-                addMsg.setForeground(GREEN); addMsg.setText("Item removed.");
+                addMsg.setText("Item removed.");
                 refreshMenuTable();
             }
         });
@@ -293,7 +305,7 @@ public class RestaurantPanel extends JPanel {
             if (row < 0) { JOptionPane.showMessageDialog(this, "Select an item to toggle."); return; }
             String itemName = (String) menuTableModel.getValueAt(row, 0);
             menuService.toggleAvailability(loggedInRestaurant, itemName);
-            addMsg.setForeground(GREEN); addMsg.setText("'" + itemName + "' availability toggled.");
+            addMsg.setText("'" + itemName + "' availability toggled.");
             refreshMenuTable();
         });
 
@@ -313,7 +325,7 @@ public class RestaurantPanel extends JPanel {
                     String code = codeF.getText().trim().toUpperCase();
                     int pct  = Integer.parseInt(discountF.getText().trim());
                     couponService.createCoupon(code, pct, loggedInRestaurant.getRestaurantId());
-                    JOptionPane.showMessageDialog(this, "Coupon '" + code + "' created! ✓");
+                    JOptionPane.showMessageDialog(this, "Coupon '" + code + "' created.");
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(this, "Invalid discount value.");
                 } catch (IllegalArgumentException ex) {
@@ -345,11 +357,9 @@ public class RestaurantPanel extends JPanel {
         
         JPanel controls = darkPanel(new FlowLayout(FlowLayout.LEFT, 10, 8));
         JComboBox<OrderStatus> statusBox = new JComboBox<>(OrderStatus.values());
-        statusBox.setBackground(CARD_BG);
-        statusBox.setForeground(FG);
         statusBox.setFont(new Font("Segoe UI", Font.PLAIN, 13));
         JButton updateBtn  = accentButton("Update Status");
-        JButton refreshBtn = smallButton("🔄 Refresh");
+        JButton refreshBtn = smallButton("Refresh");
         controls.add(styledLabel("New Status:", Font.PLAIN, 13));
         controls.add(statusBox);
         controls.add(updateBtn);
@@ -367,7 +377,7 @@ public class RestaurantPanel extends JPanel {
             orderService.updateStatus(orderId, status);
             refreshOrderTable();
             JOptionPane.showMessageDialog(this,
-                    "Order " + orderId + " updated to: " + status + " ✓");
+                    "Order " + orderId + " updated to: " + status + ".");
         });
 
         return root;
@@ -378,9 +388,10 @@ public class RestaurantPanel extends JPanel {
     
     private void refreshDashboard() {
         if (loggedInRestaurant == null) return;
-        dashRestNameLabel.setText("🏪  " + loggedInRestaurant.getName()
+        dashRestNameLabel.setText(loggedInRestaurant.getName()
                 + "  (" + loggedInRestaurant.getArea() + ")  "
-                + (loggedInRestaurant.isOpen() ? "🟢 OPEN" : "🔴 CLOSED"));
+            + (loggedInRestaurant.isOpen() ? "OPEN" : "CLOSED"));
+
         refreshMenuTable();
         refreshOrderTable();
     }
@@ -393,8 +404,8 @@ public class RestaurantPanel extends JPanel {
                     item.getName(),
                     item.getCategory(),
                     String.format("%.2f", item.getPrice()),
-                    item.isAvailable() ? "✓ Available" : "✗ Unavailable",
-                    item.getQuantity() == -1 ? "∞" : String.valueOf(item.getQuantity()),
+                    item.isAvailable() ? "Available" : "Unavailable",
+                    item.getQuantity() == -1 ? "unlimited" : String.valueOf(item.getQuantity()),
                     String.join(", ", item.getOptions())
             });
         }
@@ -419,15 +430,12 @@ public class RestaurantPanel extends JPanel {
     
     
     private JPanel darkPanel(LayoutManager layout) {
-        JPanel p = new JPanel(layout);
-        p.setBackground(BG);
-        return p;
+        return new JPanel(layout);
     }
 
     private JLabel styledLabel(String text, int style, int size) {
         JLabel l = new JLabel(text);
         l.setFont(new Font("Segoe UI", style, size));
-        l.setForeground(FG);
         return l;
     }
 
@@ -436,54 +444,40 @@ public class RestaurantPanel extends JPanel {
     }
 
     private void styleField(JTextField f) {
-        f.setBackground(CARD_BG); f.setForeground(FG); f.setCaretColor(FG);
         f.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-        f.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createLineBorder(new Color(88, 91, 112)),
-                BorderFactory.createEmptyBorder(4, 6, 4, 6)));
+        f.setBorder(BorderFactory.createEmptyBorder(4, 6, 4, 6));
     }
 
     private JButton accentButton(String text) {
         JButton b = new JButton(text);
-        b.setBackground(ACCENT); b.setForeground(new Color(20, 20, 34));
         b.setFont(new Font("Segoe UI", Font.BOLD, 13));
-        b.setFocusPainted(false); b.setBorderPainted(false);
+        b.setFocusPainted(false);
         b.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         return b;
     }
 
     private JButton smallButton(String text) {
         JButton b = new JButton(text);
-        b.setBackground(CARD_BG); b.setForeground(FG);
         b.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-        b.setFocusPainted(false); b.setBorderPainted(false);
+        b.setFocusPainted(false);
         b.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         return b;
     }
 
     private JTable styledTable(DefaultTableModel model) {
         JTable t = new JTable(model);
-        t.setBackground(CARD_BG); t.setForeground(FG);
         t.setFont(new Font("Segoe UI", Font.PLAIN, 13));
-        t.getTableHeader().setBackground(new Color(69, 71, 90));
-        t.getTableHeader().setForeground(ACCENT);
         t.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 13));
-        t.setGridColor(new Color(69, 71, 90));
-        t.setSelectionBackground(new Color(88, 91, 112));
-        t.setSelectionForeground(FG);
         return t;
     }
 
     private void styleScrollPane(JScrollPane sp) {
-        sp.getViewport().setBackground(CARD_BG);
-        sp.setBorder(BorderFactory.createLineBorder(new Color(69, 71, 90)));
+        sp.setBorder(BorderFactory.createEmptyBorder());
     }
 
     private TitledBorder titledBorder(String title) {
         TitledBorder b = BorderFactory.createTitledBorder(title);
-        b.setTitleColor(ACCENT);
         b.setTitleFont(new Font("Segoe UI", Font.BOLD, 12));
-        b.setBorder(BorderFactory.createLineBorder(new Color(88, 91, 112)));
         return b;
     }
 

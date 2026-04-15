@@ -23,7 +23,7 @@ public class Main {
         try {
             Endpoint.publish(soapAddress, new FoodDeliveryService());
             System.out.println("[Main] SOAP Service published.");
-            System.out.println("[Main] WSDL → " + soapAddress + "?wsdl");
+            System.out.println("[Main] WSDL -> " + soapAddress + "?wsdl");
         } catch (Exception e) {
             System.err.println("[Main] Failed to start SOAP service: " + e.getMessage());
             System.err.println("[Main] Continuing without SOAP API...");
